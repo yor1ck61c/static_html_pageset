@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <title>Title</title>
+</head>
+<body>
+
+<ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+    <li class="layui-nav-item ">
+        <a href="javascript:;">快捷菜单</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">首页</a></dd>
+            <dd><a href="../quickMenu/预警监控.html">预警监控</a></dd>
+            <dd><a href="../quickMenu/工作提醒.html;">工作提醒</a></dd>
+            <dd><a href="javascript:;">医患交流</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">健康干预</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">预警处置</a></dd>
+            <dd><a href="../health_interfere/healthReport.html">健康报告</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">签约建档</a>
+        <dl class="layui-nav-child">
+            <dd><a href="../sign&record/basicRecord.html">基本档案</a></dd>
+            <dd><a href="../sign&record/signManage.html">签约管理</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">内分泌科</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">心内科</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">体检科</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">健康数据</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">体征数据</a></dd>
+            <dd><a href="../health_data/生化数据.html">生化数据</a></dd>
+            <dd><a href="javascript:;">电生理数据</a></dd>
+            <dd><a href="javascript:;">影像数据</a></dd>
+            <dd><a href="javascript:;">其他检查</a></dd>
+            <dd><a href="javascript:;">全部查询</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">报表管理</a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+        </dl>
+    </li>
+    <li class="layui-nav-item ">
+        <a href="javascript:;">系统配置</a>
+        <dl class="layui-nav-child">
+            <dd><a href="../system_config/doctorsTeam.html">医生团队</a></dd>
+            <dd><a href="../system_config/contractedServicePackage.html">签约服务包</a></dd>
+            <dd><a href="javascript:;">筛查APP账号</a></dd>
+            <dd><a href="../system_config/deviceStockManagement.html">设备库存管理</a></dd>
+            <dd><a href="javascript:;">医嘱模板</a></dd>
+        </dl>
+    </li>
+</ul>
+
+    <script src="layui/layui.js"></script>
+    <script>
+        //一般直接写在一个js文件中
+        layui.use('element', function(){
+            var element = layui.element;
+
+            //…
+        });
+
+    </script>
+</body>
+</html>

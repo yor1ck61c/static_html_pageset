@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+<title>Title</title>
+</head>
+<body>
+<div class="layui-container">
+  <div class="layui-row"> 
+    
+    <!--左侧导航栏-->
+    <div id="left_nav_bar" class="layui-col-md3">
+      <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+        <li class="layui-nav-item "> <a href="javascript:;">快捷菜单</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">健康干预</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">签约建档</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">基本档案</a></dd>
+            <dd><a href="javascript:;">签约管理</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">内分泌科</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">心内科</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">体检科</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">健康数据</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item "> <a href="javascript:;">报表管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">选项1</a></dd>
+            <dd><a href="javascript:;">选项2</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item"> <a href="javascript:;">系统配置</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">医生团队</a></dd>
+            <dd><a href="javascript:;">签约服务包</a></dd>
+            <dd><a href="javascript:;">筛查APP账号</a></dd>
+            <dd><a href="javascript:;">设备库存管理</a></dd>
+            <dd><a href="javascript:;">医嘱模板</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+    
+    <!--右侧页面主体-->
+    <div style="margin-top: 5px" class="layui-col-md9">
+      <div class="layui-container"> 
+        <!--选项卡-->
+        <div class="layui-row">
+          <div class="layui-tab layui-tab-brief">
+            <ul class="layui-tab-title">
+              <a href="sign&record/basicRecord.html" type="button" class="layui-btn layui-btn-primary">返回</a>
+              <li style="margin-left: 5px" class="layui-this">基本信息</li>
+              <li>签约记录</li>
+              <li>病历记录</li>
+              <li>确诊记录</li>
+              <li>风险评估</li>
+              <li>健康看板</li>
+              <li>体检记录</li>
+              <li>干预计划</li>
+              <li>随访记录</li>
+              <li>预警记录</li>
+              <li>设备管理</li>
+            </ul>
+            <div class="layui-tab-content" > 
+              
+              <!--基本信息-->
+              <div class="layui-tab-item layui-show">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--个人基本信息表-->
+                    <div class="layui-col-md7">
+                      <table class="layui-table" style="text-align: center">
+                        <colgroup>
+                        <col width="1">
+                        <col width="2">
+                        </colgroup>
+                        <thead>
+                        <div style="margin-left: 280px"> 个人基本信息表 </div>
+                        </thead>
+                        
+                        <tbody>
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>紧急联系人</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>紧急电话</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>现住处</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>血型</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>婚姻状况</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>疾病史</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>家族史</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>遗传病史</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                          <tr>
+                            <td>过敏史</td>
+                            <td>2016-11-29</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px">
+                        身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址：
+                      </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--签约记录-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--签约记录表-->
+                    <div class="layui-col-md8" >
+                      <div style="text-align: right">
+                        <button class="btn btn-primary btn-sm">新增签约合同</button>
+                      </div>
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">签约时间</th>
+                            <th style="text-align: center">签约类型</th>
+                            <th style="text-align: center">服务包</th>
+                            <th style="text-align: center">合同结束时间</th>
+                            <th style="text-align: center">合同状态</th>
+                            <th style="text-align: center">操作</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td><a href="#">续约</a> <a href="#">解约</a> <a href="#">合同详情</a> <a href="#">详情</a> <a href="#">删除</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--病历记录-->
+              <div class="layui-tab-item ">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--病历记录表-->
+                    <div class="layui-col-md8" >
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">就诊时间</th>
+                            <th style="text-align: center">病例类型</th>
+                            <th style="text-align: center">就诊服务模式</th>
+                            <th style="text-align: center">就诊服务类型</th>
+                            <th style="text-align: center">首诊标记</th>
+                            <th style="text-align: center">诊断信息</th>
+                            <th style="text-align: center">诊断医院</th>
+                            <th style="text-align: center">诊断科室</th>
+                            <th style="text-align: center">诊断医生</th>
+                            <th style="text-align: center">操作</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td><a href="#">详情</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--确诊记录-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--确诊记录表-->
+                    <div class="layui-col-md8" >
+                      <div style="text-align: right">
+                        <button class="btn btn-primary btn-sm">新增病例</button>
+                      </div>
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">疾病名称</th>
+                            <th style="text-align: center">确诊时间</th>
+                            <th style="text-align: center">病程（月）</th>
+                            <th style="text-align: center">责任医生</th>
+                            <th style="text-align: center">责任科室</th>
+                            <th style="text-align: center">责任医院</th>
+                            <th style="text-align: center">操作</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td><a href="#">详情</a> <a href="#">编辑</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!--风险评估-->
+              <div class="layui-tab-item">
+                <div class="container" style="border: #695454 solid 1px">
+
+                  <div class="row">
+                    <div style="background-color: aqua; width: 100%; height: 20px; text-align: center">
+                      <h3><strong>风险评估</strong></h3>
+                    </div>
+                  </div>
+                  <div class="row" style="background-color: aqua;">
+                    &nbsp;
+                  </div>
+
+                  <div class="row" style="margin-top: 20px">
+                    <div class="col-2" style="width: 100%">
+
+                      <p class="btn-danger" style="text-align: center;font-size: 16px">正常</p>
+                    </div>
+                    <div class="col-2">
+                      <p class="btn-danger" style="text-align: center;font-size: 16px">正常</p>
+                    </div>
+                  </div>
+
+                  <div class="row" style="margin-top: 20px">
+                    <div style="margin-left: 20px; font-size: 16px">
+                      <p>性别：，年龄：</p>
+                      <p>体重：</p>
+                      <p>血压：</p>
+                      <p>心血管疾病风险：</p>
+                      <p>血脂异常：</p>
+                      <p>低密度脂蛋白胆固醇（LDL-C）升高，甘油三酯（TG）升高。</p>
+                      <p>患代谢综合症。</p>
+                      <p>动脉粥样硬化性心血管病（ASCVD）风险：</p>
+                      <p>10年动脉粥样硬化性心血管病（ASCVD）风险：</p>
+                      <p>终生动脉粥样硬化性心血管病（ASCVD）风险：</p>
+                      <p>10年缺血性心血管疾病风险5.4%，是同龄人的1.5倍</p>
+                    </div>
+                  </div>
+
+                  <div class="row" style="text-align: center;margin-top: 20px;margin-bottom: 10px">
+                    <div class="col-4">
+                      <img style="width: 200px;height: 200px">
+                    </div>
+                    <div class="col-4">
+                      <img style="width: 200px;height: 200px">
+                    </div>
+                    <div class="col-4">
+                      <img style="width: 200px;height: 200px">
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+              
+              <!--健康看板-->
+              <div class="layui-tab-item">
+                <div class="container" style="border: #695454 solid 1px">
+                  <div class="row" style="margin-top: 5px;margin-bottom: 5px">
+                    <div class="col-2" style="text-align: right">
+                      <div style="margin-top: 8px;font-size: 16px">选择日期</div>
+                    </div>
+                    <div class="col-3">
+                      <input type="text" id="startDate"  style="width:200px" name="title" placeholder="开始日期" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="col-3">
+                      <input type="text" id="endDate"  style="width:200px" name="title"  placeholder="结束日期" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="col-4">
+                      <div style="margin-top: 10px">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">日</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                          <label class="form-check-label" for="inlineCheckbox2">周</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          <label class="form-check-label" for="inlineCheckbox1">月</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                          <label class="form-check-label" for="inlineCheckbox2">年</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div style="background-color: aqua; width: 100%; height: 20px; text-align: center">
+                      <h3><strong>血压</strong></h3>
+                    </div>
+                  </div>
+                  <div class="row" style="background-color: aqua;"> &nbsp; </div>
+                  <div class="row" style="margin-top: 20px">
+                    <div class="container">
+                      <!--血压-->
+                      <div class="row">
+                        <div class="col-6">
+                          <table class="layui-table " lay-skin="line">
+                            <thead>
+                            <tr>
+                              <th>血压（mmhg）
+                                <div style="float: right">
+                                  平均值： 最高值： 最低值：
+                                </div>
+                              </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+                          <div id="test" style=" height: 200px;width:520px ;border: #030303 solid 1px"> </div>
+                        </div>
+                        <div class="col-6">
+                          <table class="layui-table " lay-skin="line">
+                            <thead>
+                            <tr>
+                              <th>脉率（次/分）
+                                <div style="float: right">
+                                  平均值：-- 最高值：-- 最低值：--
+                                </div>
+                              </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+                          <div id="test3" style=" height: 200px;width:100% ;border: #030303 solid 1px"> </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="layui-container">
+                          <div>
+                            <!--作息表格-->
+                            <table class="layui-table " lay-size="sm" style="text-align: center">
+                              <colgroup>
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                              </colgroup>
+                              <thead >
+                              <tr>
+                                <th style="text-align: center">日期</th>
+                                <th style="text-align: center">早起后<br>
+                                  (6:00-7:59) </th>
+                                <th style="text-align: center">上午 <br>
+                                  (8:00-11:59)</th>
+                                <th style="text-align: center">下午 <br>
+                                  (12:00-17:59)</th>
+                                <th style="text-align: center">晚上 <br>
+                                  (18:00-23:59)</th>
+                                <th style="text-align: center">平均压（MAP）</th>
+                                <th style="text-align: center">脉率</th>
+                                <th style="text-align: center">操作 </th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td>2020-7-08</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">查看详情</a></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div style="background-color: aqua; width: 100%; height: 20px; text-align: center">
+                      <h3><strong>糖尿病</strong></h3>
+                    </div>
+                  </div>
+                  <div class="row" style="background-color: aqua;"> &nbsp; </div>
+                  <div class="row" style="margin-top: 20px">
+
+                    <div class="container">
+                      <!--糖尿病chart-->
+                      <div class="row">
+                        <div class="col-6">
+                          <table class="layui-table " lay-skin="line">
+                            <thead>
+                            <tr>
+                              <th>空腹血糖（mmol/L）
+                                <div style="float: right">
+                                  平均值：-- 最高值：-- 最低值：--
+                                </div>
+                              </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+                          <div id="test2" style=" height: 200px;width:100%;border: #030303 solid 1px"> </div>
+                        </div>
+                        <div class="col-6">
+                          <table class="layui-table " lay-skin="line">
+                            <thead>
+                            <tr>
+                              <th>餐后2H血糖（mmol/L）
+                                <div style="float: right">
+                                  平均值：-- 最高值：-- 最低值：--
+                                </div>
+                              </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+                          <div id="test4" style=" height: 200px;width:100% ;border: #030303 solid 1px"> </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="layui-container">
+                          <div>
+                            <!--糖尿病表格-->
+                            <table class="layui-table " lay-size="sm" style="text-align: center">
+                              <colgroup>
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                                <col width="100">
+                              </colgroup>
+                              <thead >
+                              <tr>
+                                <th style="text-align: center">日期</th>
+                                <th style="text-align: center">凌晨<br>
+                                  (0:00-3:00) </th>
+                                <th style="text-align: center">早餐前<br>
+                                  (8:00-9:00) </th>
+                                <th style="text-align: center">早餐后<br>
+                                  (9:00-10:59) </th>
+                                <th style="text-align: center">午餐前<br>
+                                  (11:00-11:59) </th>
+                                <th style="text-align: center">午餐后<br>
+                                  (14:00-15:59)</th>
+                                <th style="text-align: center">晚餐前<br>
+                                  (16:00-18:00)</th>
+                                <th style="text-align: center">晚餐后<br>
+                                  (20:00-21:59)</th>
+                                <th style="text-align: center">睡前<br>
+                                  (22:00-22:59)</th>
+                                <th style="text-align: center">随机<br>
+                                  (23:00-23:59)</th>
+                                <th style="text-align: center">操作 </th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td>2020-7-08</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><a href="#">查看详情</a></td>
+                              </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--体检记录-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--体检信息表-->
+                    <div class="layui-col-md8" >
+                      <div style="text-align: right">
+                        <button class="btn btn-primary btn-sm">添加体检报告</button>
+                      </div>
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">体检日期</th>
+                            <th style="text-align: center">健康评价</th>
+                            <th style="text-align: center">主要健康问题</th>
+                            <th style="text-align: center">用药情况</th>
+                            <th style="text-align: center">操作</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td><a href="#">查看</a> <a href="#">编辑</a> <a href="#">删除</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--干预计划-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--确诊信息-->
+                    <div class="layui-col-md8" >
+                      <div style="text-align: right; margin-right: 15px">
+                        <button class="btn btn-primary btn-sm">新增治疗计划</button>
+                      </div>
+                      <div class="container-fluid" style="margin-top: 5px">
+                        <div class="row"> 
+                          <!--左侧-->
+                          <div class="col-3" >
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect01">确诊疾病</label>
+                              </div>
+                              <select class="custom-select" id="inputGroupSelect01">
+                                <option selected>心脏病</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                            </div>
+                            <table class="layui-table">
+                              <thead>
+                                <tr>
+                                  <th>干预计划</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>贤心</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          
+                          <!--右侧-->
+                          <div class="col-9" >
+                            <div class="container-fluid">
+                              <div class="row" style="border: #01AAED solid 1px">
+                                <table class="table table-sm" style="text-align: center">
+                                  <thead>
+                                    <tr>
+                                      <th scope="col" colspan="3">确诊信息</th>
+                                    <tr><a href="#">点击展开完整信息</a></tr>
+                                    </tr>
+                                    
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th>确诊疾病</th>
+                                      <td>Mark</td>
+                                    </tr>
+                                    <tr>
+                                      <th>确诊日期</th>
+                                      <td>Mark</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                              <div class="row" style="margin-top: 5px; border: #13A0DF 1px solid">
+                                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                                  <ul class="layui-tab-title">
+                                    <li class="layui-this">计划详情</li>
+                                    <li>执行情况</li>
+                                  </ul>
+                                  <div class="layui-tab-content">
+                                    <hr>
+                                    <div> 计划时间： </div>
+                                    <div style="margin-top: 20px"> 用药方案
+                                      <table class="layui-table" lay-size="sm">
+                                        <colgroup>
+                                        </colgroup>
+                                        <thead>
+                                          <tr>
+                                            <th>处方</th>
+                                            <th>处方时间</th>
+                                            <th>药物名称</th>
+                                            <th>用药周期</th>
+                                            <th>药物使用次剂量</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>贤心</td>
+                                            <td>2016-11-29</td>
+                                            <td>人生就像是一场修行</td>
+                                            <td>2016-11-29</td>
+                                            <td>人生就像是一场修行</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <div style="margin-top: 20px"> 运动方案<br>
+                                      <br>
+                                      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                      次/周&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp分钟/次<br>
+                                      <textarea style="width: 100%; margin-top: 5px">
+																		  </textarea>
+                                    </div>
+                                    <div style="margin-top: 20px"> 膳食建议 <br>
+                                      <textarea style="width: 100%; margin-top: 5px">
+																		  </textarea>
+                                    </div>
+                                    <div style="margin-top: 20px"> 个人危急值
+                                      <table class="layui-table" lay-size="sm">
+                                        <colgroup>
+                                        <col width="150">
+                                        <col width="200">
+                                        <col>
+                                        </colgroup>
+                                        <thead>
+                                          <tr>
+                                            <th>监测指标</th>
+                                            <th>目标</th>
+                                            <th>监测要求</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>贤心</td>
+                                            <td>2016-11-29</td>
+                                            <td>人生就像是一场修行</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                    <div style="margin-top: 20px"> 随访方案
+                                      <table class="layui-table" lay-size="sm">
+                                        <colgroup>
+                                        </colgroup>
+                                        <thead>
+                                          <tr>
+                                            <th>下次随访日期</th>
+                                            <th>检测项目</th>
+                                            <th>随访方式</th>
+                                            <th>随访医生</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>贤心</td>
+                                            <td>2016-11-29</td>
+                                            <td>人生就像是一场修行</td>
+                                            <td>人生就像是一场修行</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px ;height: 568px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--随访记录-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--随访信息表-->
+                    <div class="layui-col-md8" > 
+                      <!--选择框和按钮-->
+                      <div  style="margin-top: 5px" class="container-fluid">
+                        <div class="row">
+                          <div class="col-2" style="margin-top: 10px"> 疾病名称：</div>
+                          <div class="col-4" style="margin-left: -40px">
+                            <select style="width: 200px;" class="form-control" id="exampleFormControlSelect1">
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                            </select>
+                          </div>
+                          <div class="col-6" style="text-align: right; margin-left: 40px">
+                            <button class="btn btn-primary btn-sm">添加体检报告</button>
+                          </div>
+                        </div>
+                      </div>
+                      <!--表-->
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">随访时间</th>
+                            <th style="text-align: center">疾病名称</th>
+                            <th style="text-align: center">随访类型</th>
+                            <th style="text-align: center">随访方式</th>
+                            <th style="text-align: center">随访评价</th>
+                            <th style="text-align: center">心理评价</th>
+                            <th style="text-align: center">服药依从性</th>
+                            <th style="text-align: center">药物反应</th>
+                            <th style="text-align: center">遵医行为</th>
+                            <th style="text-align: center">下次随访时间</th>
+                            <th style="text-align: center">随访医生</th>
+                            <th style="text-align: center">随访科室</th>
+                            <th style="text-align: center">操作</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td><a href="#">详情</a> <a href="#">编辑</a> <a href="#">删除</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--预警记录-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--预警信息表-->
+                    <div class="layui-col-md8" >
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">预警时间</th>
+                            <th style="text-align: center">预警类型</th>
+                            <th style="text-align: center">检测指标</th>
+                            <th style="text-align: center">检测值</th>
+                            <th style="text-align: center">分析结果</th>
+                            <th style="text-align: center">处理意见</th>
+                            <th style="text-align: center">处理医生</th>
+                            <th style="text-align: center">操作</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td class="layui-btn-warm" style="font-weight: bold">指标异常预警</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td><a href="#">详情</a></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!--设备管理-->
+              <div class="layui-tab-item">
+                <div class="layui-container">
+                  <div class="row"> 
+                    <!--设备信息表-->
+                    <div class="layui-col-md8" >
+                      <table class="layui-table" style="text-align: center">
+                        <thead>
+                          <tr>
+                            <th style="text-align: center">合同编号</th>
+                            <th style="text-align: center">领用时间</th>
+                            <th style="text-align: center">设备名称</th>
+                            <th style="text-align: center">设备编号</th>
+                            <th style="text-align: center">借用状态</th>
+                            <th style="text-align: center">经办人</th>
+                          </tr>
+                        </thead>
+                        <tbody >
+                          <tr>
+                            <td>联系电话</td>
+                            <td>2016-11-29</td>
+                            <td>2016-11-29</td>
+                            <td>联系电话</td>
+                            <td>联系电话</td>
+                            <td>联系电话</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!--个人信息-->
+                    <div style="text-align: center;margin-left: 80px; border: #01AAED solid 5px" class="layui-col-md3"> <img src="img/pic.png"><br>
+                      <img src="img/heart.png"><img src="img/heart.png"><img src="img/heart.png">
+                      <div style="text-align: left; margin-left: 50px;margin-top: 20px"> 身份证号：<br>
+                        姓名：<br>
+                        性别：<br>
+                        出生日期：<br>
+                        年龄：<br>
+                        民族：<br>
+                        户籍地址： </div>
+                      <div style="margin-top: 20px;margin-left: 5px;margin-right: 5px">
+                        <button type="button" class="btn btn-secondary btn-block" disabled>已开通APP</button>
+                      </div>
+                      <div style="margin: 10px 5px;">
+                        <button type="button" class="btn btn-primary  btn-block">在线交流</button>
+                        <button type="button" class="btn btn-primary  btn-block">生成健康报告</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script> 
+<!-- 开发环境版本，包含了有帮助的命令行警告 --> 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+<script>
+    var teamInfoVm = new Vue({
+        el : '#teamInfoTable',
+        data : {
+            teamName:"test",
+            teamInfos : [{
+                teamType : 1,
+                creator : 1,
+                teamSize : 1,
+                teamDescribe : 1,
+                teamStatus : 1
+            },
+            ],
+        }
+
+    })
+</script> 
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+<script>
+  $('#startDate').focus(function () {
+    var t = $(this).attr('type')
+    if (t === "text"){
+      $(this).attr("type","date")
+    }
+  })
+  $('#startDate').blur(function () {
+    var t = $(this).attr('type')
+    if (t === "date"){
+      $(this).attr("type","text")
+    }
+  })
+
+  $('#endDate').focus(function () {
+    var t = $(this).attr('type')
+    if (t === "text"){
+      $(this).attr("type","date")
+    }
+  })
+  $('#endDate').blur(function () {
+    var t = $(this).attr('type')
+    if (t === "date"){
+      $(this).attr("type","text")
+    }
+  })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> 
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script> 
+<script>
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    layui.use('form',function () {
+        var form = layui.form;
+    })
+    layui.use('button',function () {
+        var button = layui.button;
+    })
+
+</script>
+<!--<script>
+    $('#left_nav_bar').load("../leftNavBar.html")
+</script>--> 
+
+<script>
+    var height = $(window).height();
+    $('#leftNavBar').css("height",height);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.0.0/dist/echarts.min.js"></script>
+<script>
+  var testChart = echarts.init(document.getElementById('test'));
+  // 指定图表的配置项和数据
+  var option = {
+    title: {
+      text: 'ECharts 入门示例'
+    },
+    tooltip: {},
+    legend: {
+      data:['销量']
+    },
+    xAxis: {
+      data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+    },
+    yAxis: {},
+    series: [{
+      name: '销量',
+      type: 'bar',
+      data: [5, 20, 36, 10, 10, 20]
+    }]
+  };
+
+  // 使用刚指定的配置项和数据显示图表。
+  testChart.setOption(option);
+</script>
+</body>
+</html>

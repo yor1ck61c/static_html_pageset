@@ -1,0 +1,243 @@
+12.15  完成了签约服务包，添加服务包页面
+
+tips: 1.layui导航栏在当前页面展开属性： <li class="layui-nav-item layui-nav-itemed">
+      2.二级菜单子项高亮显示：<dd class="layui-this">
+      3.模态框可选超大号。
+
+
+12.16 开始学习Vue.js框架的第一天
+单项数据:
+
+1.引入Vue.js文件
+
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+2.需要绑定的数据的父标签内加id="testId",标签内写两个花括号,括号内为键名
+<div id="testId">
+    {{key}}
+</div>
+
+3.数据绑定(不要加分号！！！不同项之间逗号隔开，最后一个可不加逗号)
+  var vm = new Vue({
+      el = '#testId',           // el = element的缩写，值为id选择器，选取绑定数据的id
+      data: {
+          key: value            // value为数据绑定的值
+      }
+  })
+
+4.表格的数据绑定: 需要用到v-for
+  (1) v-for :
+               v-for 指令可以绑定数组的数据来渲染一个项目列表：
+
+               <div id="app-4">
+                 <ul>
+                   <li v-for="todo in todos">
+                     {{ todo.text }}
+                   </li>
+                 </ul>
+               </div>
+               var app4 = new Vue({
+                 el: '#app-4',
+                 data: {
+                   todos: [
+                     { text: '学习 JavaScript' },
+                     { text: '学习 Vue' },
+                     { text: '整个牛项目' }
+                   ]
+                 }
+               })
+
+(2) html部分：
+
+    表格外的<div>标签添加id属性，值为任意取的表格名
+    eg. <div id="userInfo">
+    表格内的<tr>行标签添加v-for指令，值为 record in records (类似于foreach循环)
+    eg. <tr v-for="user in users">
+    表格内的<td>列表前包裹值。值用两个花括号括起来，并通过record.字段名获取。
+    eg. <td>{{user.username}}</td>
+       <td>{{user.password}}</td>
+       <td>{{user. ··· }}</td>
+
+    js部分：数据采取json数组的方式。
+    var vm = new Vue({
+        el : '#div中的id属性值'
+        data : {
+            records:[{
+                字段名:字段值,             //逗号隔开，最后一项可不加逗号。
+                字段名:字段值,
+                    ···
+            }]
+        }
+    })
+
+    eg.
+    html部分：
+    <div id="userInfo">
+        <table>
+            <thead>略</thead>
+            <tbody>
+                <tr v-for="user in users">
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user. ··· }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    var vm = new Vue({
+        el:'#userInfo',
+        data:{
+            users:[{
+                username:"yorick",
+                password:"qwe123",
+                     ···
+            }]
+        }
+    })
+
+5.json语法：参见 https://www.w3school.com.cn/json/json_syntax.asp
+
+
+
+
+tips:    1.数据与值需要一一对应。
+         2.Since Vue doesn’t allow dynamically adding root-level reactive properties,
+         you have to initialize Vue instances by declaring all root-level reactive
+         data properties upfront, even with an empty value:
+
+         var vm = new Vue({
+           data: {
+             // declare message with an empty value
+             message: ''
+           },
+           template: '<div>{{ message }}</div>'
+         })
+         // set `message` later
+         vm.message = 'Hello!'
+         If you don’t declare message in the data option,
+         Vue will warn you that the render function is trying to access a property
+         that doesn’t exist.
+         3.json正确格式:属性值和字符串必须用双引号括起来，否则不能使用JSON.parse(json)。对象中json属性名可以不加双引号。
+
+
+12.17  学习Vue.js框架的第二天
+
+1.表单的数据绑定：
+首先，在外层div中添加id。外层div需要包裹form表单以及button按钮。
+可以用 v-model 指令在表单 <input>、<textarea> 及 <select> 元素上创建双向数据绑定。
+eg. <input v-model="edtSuitableCrowd" type="text" class="form-control" placeholder="" id="suitableCrowd">
+    <select v-model="servicePackageLevel" class="form-control" id="servicePackageLevel">
+         <option>省级</option>
+         <option>市级</option>
+    </select>
+绑定好后，新建一个Vue对象
+el : '#div中的id'，
+data: 可通过v-model中的字段名更新input中的值。
+eg.
+data : {
+    edtServicePackageName : "test"
+},
+
+提交表单：在div内添加button按钮，同时用@click监听单击事件。@click的值是函数名
+eg.<button type="button" class="btn btn-primary" @click="save">保存</button>
+
+处理表单数据：在Vue对象中，添加method:{},括号内写方法名:function(){方法的实现}
+tips:可以将获取的数据var一个对象打包，方便处理。
+eg.
+methods : {
+            save : function () {
+                var servicePackageInfos = {
+                    edtServicePackageName : this.edtServicePackageName,
+                    edtServicePackageNum : this.edtServicePackageNum,
+                    edtSuitableCrowd : this.edtSuitableCrowd,
+                    servicePackageLevel : this.servicePackageLevel,
+                    servicePackageType : this.servicePackageType,
+                    servicePackageStatus : this.servicePackageStatus,
+                    edtServicePackagePrice : this.edtServicePackagePrice,
+                    edtServicePackageDiscountedPrice : this.edtServicePackageDiscountedPrice,
+                    edtServiceIllustration : this.edtServiceIllustration
+                }
+
+                var test = servicePackageInfos.servicePackageStatus
+                alert(test)
+
+            }
+        }
+
+12.19 整合axios-vue.js
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    html：
+    <!--条件搜索，添加服务包-->
+                    <div class="layui-row">
+                        <form class="layui-form" action="">
+                            <div id="searchPackage" style="margin-top: 5px;" class="layui-form-item">
+                                <div style="margin-top: 5px;" class="layui-inline">
+                                    <input v-model="search.PackageName" type="text" lay-verify="required" placeholder="服务包名称" autocomplete="off" class="layui-input">
+                                </div>
+                                <div style="margin-top: 5px;width: 150px" class="layui-inline">
+                                    <select v-model="search.PackageLevel" name="servicePackageLevel" lay-verify="">
+                                        <option >服务包等级</option>
+                                    </select>
+                                </div>
+                                <button type="button" class="layui-btn layui-btn-warm" @click="check">搜索</button>
+                                <button type="button" class="layui-btn layui-btn-normal" data-toggle="modal" data-target="#addServicePackage">添加服务包</button>
+                            </div>
+                        </form>
+                    </div>
+
+    var searchVm = new Vue({
+        el:'#searchPackage',         获取外层div
+        data: {                      数据部分字段名，打包成一个对象。
+            search:{
+                PackageName : "",
+                PackageLevel : ""
+            },
+
+
+        },
+        methods : {
+            check : function () {
+                axios.post("test/getData",this.search).then(response => {       "test/getData"：请求的资源路径  this.search：携带的json参数
+                   this.search = response.data;                                 response => {}：lambda表达式，参数为response，{}内为函数体，匿名函数的优雅写法。
+                   alert(this.search.PackageName)                               直接将response的data值赋给this.search，要求返回字段名与search字段名对应。
+                })
+            }
+        }
+    })
+
+2021.1.1 NewStart
+
+1.vue生命周期函数--mounted：实例被挂载后调用，这时 el 被新创建的 vm.$el 替换了（如果根实例挂载到了一个文档内的元素上，当 mounted 被调用时 vm.$el 也在文档内。
+
+                     注意 mounted 不会保证所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以在 mounted 内部使用 vm.$nextTick：
+                     
+                     mounted: function () {
+                       this.$nextTick(function () {
+                         // Code that will run only after the
+                         // entire view has been rendered
+                       })
+                     }
+
+                     正常用法：首先在data中定义数据绑定的元素，在data后
+                     mounted : function () {
+
+                        //定义方法的名称，类似定义接口
+                        eg. this.getSomeData();
+                     },
+
+                     在后面的methods中实现mounted中的方法。
+                     method : {
+                                 getServePackageTableData : function () {
+                                     axios.post("testLink").then(res => {
+                                         this.ServePackageTableInfo = res.data; //字段名要一一对应。
+                                     })
+                                 }
+                             }
+
+        2.跨Vue对象之间的数据访问：
+          vue对象名.[$data.]字段名。
+
+

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+    <title>医生团队</title>
+</head>
+<body>
+
+<div class="layui-container">
+
+    <div class="layui-row">
+
+        <!--左侧导航栏-->
+        <div id="left_nav_bar" class="layui-col-md3">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+                <li class="layui-nav-item ">
+                    <a style="c" href="javascript:;">快捷菜单</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../quickMenu/首页.html">首页</a></dd>
+                        <dd><a href="../quickMenu/预警监控.html">预警监控</a></dd>
+                        <dd><a href="../quickMenu/工作提醒.html">工作提醒</a></dd>
+                        <dd><a href="javascript:;">医患交流</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康干预</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">预警处置</a></dd>
+                        <dd><a href="../health_interfere/healthReport.html">健康报告</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">签约建档</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../sign&record/basicRecord.html">基本档案</a></dd>
+                        <dd><a href="../sign&record/signManage.html">签约管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">内分泌科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">心内科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">体检科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康数据</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">体征数据</a></dd>
+                        <dd><a href="../health_data/生化数据.html">生化数据</a></dd>
+                        <dd><a href="javascript:;">电生理数据</a></dd>
+                        <dd><a href="javascript:;">影像数据</a></dd>
+                        <dd><a href="javascript:;">其他检查</a></dd>
+                        <dd><a href="javascript:;">全部查询</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">报表管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">系统配置</a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this"><a href="../system_config/doctorsTeam.html">医生团队</a></dd>
+                        <dd><a href="../system_config/contractedServicePackage.html">签约服务包</a></dd>
+                        <dd><a href="javascript:;">筛查APP账号</a></dd>
+                        <dd><a href="../system_config/deviceStockManagement.html">设备库存管理</a></dd>
+                        <dd><a href="javascript:;">医嘱模板</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--右侧页面主体-->
+        <div style="margin-top: 5px" class="layui-col-md9">
+            <!--路径导航-->
+            <span style="margin-left: 20px;" class="layui-breadcrumb">
+                <a>系统配置</a>
+                <a><cite>医生团队</cite></a>
+            </span>
+
+            <div style="border: 1px #9F9F9F solid; margin-left: 10px; margin-top:10px;" class="layui-container">
+
+                <!--条件搜索，新增团队-->
+                <div class="layui-row">
+                    <form class="layui-form" action="">
+                        <div style="margin-top: 5px;" class="layui-form-item">
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input type="text" name="edtTeamName" required  lay-verify="required" placeholder="团队名称" autocomplete="off" class="layui-input">
+                            </div>
+                            <button type="button" class="layui-btn layui-btn-warm">搜索</button>
+                            <button type="button" class="layui-btn layui-btn-normal" data-toggle="modal" data-target="#addTeam">新增团队</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!--我添加或加入的团队，全科医生团队-->
+                <div class="layui-row" >
+                    <div class="layui-col-md3" style="border: #9F9F9F 1px solid;width: 24%">
+                        <p style="font-size: 16px;margin-top: 5px;margin-left: 10px">我添加或加入的团队</p>
+                        <div class="layui-collapse" style="margin-top: 5px">
+                            <div id="teamInfoTable" class="layui-colla-item">
+                                <h2 class="layui-colla-title">{{teamName}}</h2>
+                                <div  class="layui-colla-content layui-collapse">
+                                    <table v-for="info in teamInfos" class="layui-table" lay-size="sm">
+                                        <tr><td>团队类型：{{info.teamType}}</td></tr>
+                                        <tr><td>创建人：{{info.creator}}</td></tr>
+                                        <tr><td>团队人数：{{info.teamSize}}</td></tr>
+                                        <tr><td>团队描述：{{info.teamDescribe}}</td></tr>
+                                        <tr><td>团队状态：{{info.teamStatus}}</td></tr>
+                                        <tr><td>
+                                            <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">新增成员</button>
+                                            <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">编辑</button>
+                                            <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">删除</button>
+                                        </td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-md9" style="border: #9F9F9F 1px solid; margin-left: 10px  ">
+                        <p style="text-align: center;font-size: 16px; margin-top: 5px"> 全科医生团队</p>
+                        <hr style="margin-top: 5px;">
+                        <div >
+                            <table  style="text-align: center" class="layui-table">
+                                <colgroup>
+
+                                </colgroup>
+                                <thead>
+                                <tr>
+                                    <th style="text-align: center">操作</th>
+                                    <th style="text-align: center">照片</th>
+                                    <th style="text-align: center">姓名</th>
+                                    <th style="text-align: center">团队职责</th>
+                                    <th style="text-align: center">职称</th>
+                                    <th style="text-align: center">团队管理员</th>
+                                    <th style="text-align: center">建档机构</th>
+                                    <th style="text-align: center">其他描述</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">编辑</button>
+                                        <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">删除</button>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>贤心</td>
+                                    <td>2016-11-29</td>
+                                    <td></td>
+                                    <td>贤心</td>
+                                    <td>2016-11-29</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新增团队模态框-->
+    <div  class="modal fade" id="addTeam" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" >
+            <div  class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="staticBackdropLabel">新增团队</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+
+                        <div class="form-group">
+                            <label for="edtTeamName" class="col-form-label">* 团队名称</label>
+                            <input type="text" class="form-control" placeholder="" id="edtTeamName">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edtTeamCode" class="col-form-label">团队编码</label>
+                            <input type="text" class="form-control" placeholder="" id="edtTeamCode">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="teamType">团队类型</label>
+                            <select class="form-control" id="teamType">
+                                <option>全科</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edtTeamDescribe" class="col-form-label">* 团队描述</label>
+                            <input type="text" class="form-control" placeholder="" id="edtTeamDescribe">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edtPhoneNum" class="col-form-label">联系电话</label>
+                            <input type="text" class="form-control" placeholder="" id="edtPhoneNum">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edtAddress" class="col-form-label">联系地址</label>
+                            <input type="text" class="form-control" placeholder="" id="edtAddress">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="teamStatus">团队状态</label>
+                            <select class="form-control" id="teamStatus">
+                                <option>正常</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var teamInfoVm = new Vue({
+        el : '#teamInfoTable',
+        data : {
+            teamName:"test",
+            teamInfos : [{
+                teamType : 1,
+                creator : 1,
+                teamSize : 1,
+                teamDescribe : 1,
+                teamStatus : 1
+            },
+            ],
+        }
+
+    })
+</script>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+<script>
+    $('#startDate').focus(function () {
+        var t = $(this).attr('type')
+        if (t === "text"){
+            $(this).attr("type","date")
+        }
+    })
+    $('#startDate').blur(function () {
+        var t = $(this).attr('type')
+        if (t === "date"){
+            $(this).attr("type","text")
+        }
+    })
+
+    $('#endDate').focus(function () {
+        var t = $(this).attr('type')
+        if (t === "text"){
+            $(this).attr("type","date")
+        }
+    })
+    $('#endDate').blur(function () {
+        var t = $(this).attr('type')
+        if (t === "date"){
+            $(this).attr("type","text")
+        }
+    })
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    layui.use('form',function () {
+        var form = layui.form;
+    })
+    layui.use('button',function () {
+        var button = layui.button;
+    })
+
+</script>
+<!--<script>
+    $('#left_nav_bar').load("../leftNavBar.html")
+</script>-->
+
+<script>
+    var height = $(window).height();
+    $('#leftNavBar').css("height",height);
+</script>
+</body>
+</html>

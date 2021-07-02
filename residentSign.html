@@ -1,0 +1,249 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>quickServeNav</title>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">居民建档</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container" >
+                    <div class="row"  >
+                        <div style="width: 100%;margin-top: 10px;margin-bottom: 10px;text-align: center; font-size: 24px">个人基本信息表</div>
+                        <div style="width: 100%;margin-top: 10px;margin-bottom: 10px;"> <span style="margin-left: 10px"> * 姓名:</span> <span>
+      <input>
+      </span> <span style="float: right;margin-right: 10px;"> 编号：
+      <input>
+      </span> </div>
+                    </div>
+                    <div class="row" style="font-size: 16px; text-align: center">
+                        <table width="100%" border="1">
+                            <tbody>
+                            <tr>
+                                <td width="10%">&nbsp;*身份证号</td>
+                                <td><input type="text" style="width: 100%"></td>
+                                <td width="10%">&nbsp;*性别</td>
+                                <td><span id="unknownGender">0 未知的性别</span> <span id="male" style="margin-left: 5px">1 男性</span> <span id="female" style="margin-left: 5px">2 女性</span> <span id="unDescribe" style="margin-left: 5px">9 未说明的性别</span> <span style="float: right;margin-right: 5px">
+            <input id="gender" style="width: 30px; "></td>
+                                </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" border="1">
+                            <tbody>
+                            <tr>
+                                <td width="10%">&nbsp;*出生日期</td>
+                                <td><input type="date" style="width: 100%"></td>
+                                <td width="10%">&nbsp;*常住类型</td>
+                                <td><span id="registered" style="margin-left: 5px">1 户籍</span> <span id="unRegistered" style="margin-left: 5px">2 非户籍</span> <span style="float: right;margin-right: 5px">
+            <input id="isRegistered" style="width: 30px; ">
+            </span></td>
+                                <td width="10%">&nbsp;民族</td>
+                                <td ><select style="width: 100%;">
+                                    <option>汉族</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;*本人电话</td>
+                                <td><input style="width: 100%"></td>
+                                <td>&nbsp;联系人姓名</td>
+                                <td><input style="width: 100%"></td>
+                                <td>&nbsp;联系人电话</td>
+                                <td><input style="width: 100%"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" border="1">
+                            <tbody>
+                            <tr>
+                                <td width="10%">&nbsp;户籍地址</td>
+                                <td><input style="width: 100%"></td>
+                                <td width="10%">&nbsp;现住址</td>
+                                <td><input style="width: 100%"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" border="1">
+                            <tbody>
+                            <tr>
+                                <td width="10%">&nbsp;血型</td>
+                                <td><span>1.A型</span> <span style="margin-left: 10px">2.B型</span> <span style="margin-left: 10px">3.O型</span> <span style="margin-left: 10px">4.AB型</span> <span style="margin-left: 10px">5.不详</span> <span style="margin-left: 10px;margin-right: 10px">/</span> <span>RH:</span> <span>1.阳性</span> <span style="margin-left: 10px">2.阴性</span> <span style="margin-left: 10px">3.不详</span>
+                                    <span style="float: right; margin-right: 5px">
+            <input id="bloodType" style="width: 30px; ">
+            /
+            <input id="rh_type" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;婚姻状况</td>
+                                <td><span>1.未婚</span> <span style="margin-left: 10px">2.已婚</span> <span style="margin-left: 10px">3.丧偶</span> <span style="margin-left: 10px">4.离婚</span> <span style="margin-left: 10px">5.未说明的婚姻状况</span> <span style="float: right; margin-right: 5px">
+            <input id="love_story" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;文化程度</td>
+                                <td><span>1.研究生</span> <span style="margin-left: 10px">2.大学本科</span> <span style="margin-left: 10px">3.大学专科和专科院校</span> <span style="margin-left: 10px">4.中等专业学校</span> <span style="margin-left: 10px">5.技工学校</span> <span style="margin-left: 10px">6.高中</span> <span style="margin-left: 10px">7.初中</span> <span style="margin-left: 10px">8.小学</span> <span style="margin-left: 10px">9.文盲和半文盲</span> <span style="margin-left: 10px">10.不详</span> <span style="float: right; margin-right: 5px">
+            <input id="eduLevel" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;职业</td>
+                                <td><span>0.国家机关、党群组织、企业、事业单位负责人</span> <span style="margin-left: 10px">1.专业技术人员</span> <span style="margin-left: 10px">2.办事人员和有关人员</span> <span style="margin-left: 10px">3.商业、服务业人员</span><br>
+                                    <span style="margin-left: 10px">4.农、林、牧、渔、水利业生产人员</span> <span style="margin-left: 10px">5.生产、运输设备操作人员及有关人员</span> <span style="margin-left: 10px">6.军人</span> <span style="margin-left: 10px">7.不便分类的其他从业人员</span> <span style="margin-left: 10px">8.无职业</span> <span style="float: right; margin-right: 5px; margin-top: -10px">
+            <input id="job" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            <tr>
+                                <td>医疗费用<br>
+                                    支付方式</td>
+                                <td><span style="margin-left: 10px">1.城镇职工基本医疗保险</span> <span style="margin-left: 10px">2.城镇居民基本医疗保险</span> <span style="margin-left: 10px">3.新型农村合作医疗</span> <span style="margin-left: 10px">4.贫困救助</span> <span style="margin-left: 10px">5.商业医疗保险</span> <span style="margin-left: 10px">6.全公费</span> <span style="margin-left: 10px">7.全自费</span><br>
+                                    <span style="margin-left: 10px">8.其他
+            <input style="margin-left: 5px">
+            </span> <span style="float: right; margin-right: 5px; margin-top: -10px">
+            <input id="pay" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;药物过敏史</td>
+                                <td><span>0.无</span> <span style="margin-left: 10px">101.青霉素类抗生素</span> <span style="margin-left: 10px">102.磺胺类抗生素</span> <span style="margin-left: 10px">103.头孢类抗生素</span> <span style="margin-left: 10px">104.含碘药品</span> <span style="margin-left: 10px">105.酒精</span> <span style="margin-left: 10px">106.镇静麻醉剂</span><br>
+                                    <span style="margin-left: 10px">199.其他药物过敏源
+            <input style="margin-left: 5px">
+            </span> <span style="margin-left: 10px">1.猪肉</span> <span style="margin-left: 10px">2.羊肉</span> <span style="margin-left: 10px">3.牛肉</span> <span style="margin-left: 10px">4.牛奶</span> <span style="margin-left: 10px">5.蛋及蛋制品</span> <span style="margin-left: 10px">6.鸡、鸭等禽类食品</span><br>
+                                    <span style="margin-left: 10px">7.鱼、虾等水产类食品</span> <span style="margin-left: 10px">8.水果（包括带壳的果仁）</span> <span style="margin-left: 10px">299.其他食物过敏源
+            <input style="margin-left: 5px">
+            </span><br>
+                                    <span style="margin-left: 10px">301.植物花粉</span> <span style="margin-left: 10px">302.动物毛发</span> <span style="margin-left: 10px">303.空气粉尘</span> <span style="margin-left: 10px;">399.其他环境过敏源
+            <input style="margin-left: 5px">
+            </span><br>
+                                    <span style="margin-left: 10px">4.混合型过敏原
+            <input style="margin-left: 5px">
+            </span> <span style="margin-left: 10px">9.其他过敏原
+            <input style="margin-left: 5px">
+            </span> <span style="float: right; margin-right: 5px;">
+            <input id="allergic" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;暴露史</td>
+                                <td><span>1.无</span> <span style="margin-left: 10px">2.化学品</span> <span style="margin-left: 10px">3.毒物</span> <span style="margin-left: 10px">4.射线</span> <span style="float: right; margin-right: 5px;">
+            <input id="expose" style="width: 30px; ">
+            </span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="10%" border="1">
+                            <tbody>
+                            <tr>
+                                <td height="150px">&nbsp;既往史</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="90%" border="1">
+                            <tbody>
+                            <tr>
+                                <td width="10%">&nbsp;疾病</td>
+                                <td><span>1.无</span> <span style="margin-left: 10px">2.高血压</span> <span style="margin-left: 10px">3.糖尿病</span> <span style="margin-left: 10px">4.冠心病</span> <span style="margin-left: 10px">5.慢性阻塞性肺疾病</span> <span style="margin-left: 10px">6.恶性肿瘤</span> <span style="margin-left: 10px">7.脑卒中</span> <span style="margin-left: 10px">8.严重精神障碍</span> <span style="margin-left: 10px">9.结核病</span> <span style="margin-left: 10px">10.肝炎</span><span margin-left: 10px><br>11.其他法定传染病</span> <span style="margin-left: 10px">12.职业病</span> <span style="margin-left: 10px">13.其他</span>
+                                    <span style="float: right; margin-right: 5px;">
+            	  <input id="disease1" style="width: 30px; "> / <input id="disease2" style="width: 30px; "> /
+				  <input id="disease3" style="width: 30px; ">
+              </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;手术</td>
+                                <td>
+                                    <span>1.无</span>
+                                    <span style="margin-left: 10px">2.有</span>
+                                    <span style="float: right; margin-right: 5px;">
+            	  <input id="operation" style="width: 30px; ">
+              </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;外伤</td>
+                                <td>
+                                    <span>1.无</span>
+                                    <span style="margin-left: 10px">2.有</span>
+                                    <span style="float: right; margin-right: 5px;">
+            	  <input id="wound" style="width: 30px; ">
+              </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;输血</td>
+                                <td>
+                                    <span>1.无</span>
+                                    <span style="margin-left: 10px">2.有</span>
+                                    <span style="float: right; margin-right: 5px;">
+            	  <input id="blood_in" style="width: 30px; ">
+              </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table width="100%" border="1">
+                            <tbody>
+                            <tr>
+                                <td width="10%">&nbsp;家族史</td>
+                                <td>
+                                    <span>1.无</span> <span style="margin-left: 10px">2.高血压</span> <span style="margin-left: 10px">3.糖尿病</span> <span style="margin-left: 10px">4.冠心病</span> <span style="margin-left: 10px">5.慢性阻塞性肺疾病</span> <span style="margin-left: 10px">6.恶性肿瘤</span> <span style="margin-left: 10px">7.脑卒中</span> <span style="margin-left: 10px">8.严重精神障碍</span> <span style="margin-left: 10px">9.结核病</span> <span style="margin-left: 10px">10.肝炎</span><span style="margin-left: 10px">11.其他法定传染病</span><br> <span style="margin-left: 10px">12.职业病</span> <span style="margin-left: 10px">13.其他</span><br>
+                                    <span>
+				  父亲：
+			  <input id="father_disease1" style="width: 30px; ">
+            /
+            <input id="father_disease2" style="width: 30px; ">
+			  </span>
+                                    <span style="margin-left: 20px">
+				  母亲：
+			  <input id="mother_disease1" style="width: 30px; ">
+            /
+            <input id="mother_disease2" style="width: 30px; ">
+			  </span>
+                                    <span style="margin-left: 20px">
+				  子女：
+			  <input id="children_disease1" style="width: 30px; ">
+            /
+            <input id="children_disease2" style="width: 30px; ">
+			  </span>
+                                    <span style="margin-left: 20px">
+				  兄弟姐妹：
+			  <input id="brother_disease1" style="width: 30px; ">
+            /
+            <input id="brother_disease2" style="width: 30px; ">
+			  </span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+    <title>预警监控</title>
+</head>
+<body>
+<div class="layui-container">
+
+    <div class="layui-row">
+        <!--左侧导航-->
+        <div id="left_nav_bar" class="layui-col-md3">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">快捷菜单</a>
+                    <dl class="layui-nav-child ">
+                        <dd><a href="../quickMenu/首页.html">首页</a></dd>
+                        <dd class="layui-this"><a href="../quickMenu/预警监控.html">预警监控</a></dd>
+                        <dd><a href="../quickMenu/工作提醒.html">工作提醒</a></dd>
+                        <dd><a href="javascript:;">医患交流</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康干预</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">预警处置</a></dd>
+                        <dd><a href="../health_interfere/healthReport.html">健康报告</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">签约建档</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../sign&record/basicRecord.html">基本档案</a></dd>
+                        <dd><a href="../sign&record/signManage.html">签约管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">内分泌科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">心内科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">体检科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康数据</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">体征数据</a></dd>
+                        <dd><a href="../health_data/生化数据.html">生化数据</a></dd>
+                        <dd><a href="javascript:;">电生理数据</a></dd>
+                        <dd><a href="javascript:;">影像数据</a></dd>
+                        <dd><a href="javascript:;">其他检查</a></dd>
+                        <dd><a href="javascript:;">全部查询</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">报表管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">系统配置</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../system_config/doctorsTeam.html">医生团队</a></dd>
+                        <dd><a href="../system_config/contractedServicePackage.html">签约服务包</a></dd>
+                        <dd><a href="javascript:;">筛查APP账号</a></dd>
+                        <dd><a href="../system_config/deviceStockManagement.html">设备库存管理</a></dd>
+                        <dd><a href="javascript:;">医嘱模板</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--右侧页面主体-->
+        <div style="margin-top: 5px" class="layui-col-md9">
+            <!--面包屑导航-->
+            <span style="margin-left: 20px;" class="layui-breadcrumb">
+                <a>快捷菜单</a>
+                <a><cite>预警监控</cite></a>
+            </span>
+            <div style="border: 1px #9F9F9F solid;width: 1320px; margin-left: 10px; margin-top:10px;" class="right-div">
+                <!--表格-->
+                <div class="layui-row">
+                    <p style="margin-left: 10px; margin-top: 5px; font-size: 16px; color: #777777">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-exclamation-circle-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+                        预警数据</p>
+                    <hr style="margin-left: 10px; margin-top: 5px;">
+                    <div>
+                        <table style="text-align: center; margin-left: 10px; width:1299px;overflow:auto" class="layui-table">
+                            <colgroup>
+                            </colgroup>
+                            <thead>
+                            <tr>
+                                <th style="text-align: center">操作</th>
+                                <th style="text-align: center">姓名</th>
+                                <th style="text-align: center">性别</th>
+                                <th style="text-align: center">年龄</th>
+                                <th style="text-align: center">联系电话</th>
+                                <th style="text-align: center">检测指标</th>
+                                <th style="text-align: center">预警类型</th>
+                                <th style="text-align: center">检测值</th>
+                                <th style="text-align: center">分析结果</th>
+                                <th style="text-align: center">预警时间</th>
+                                <th style="text-align: center">预警时长</th>
+                                <th style=" text-align: center">建档机构</th>
+                                <th style="text-align: center">户籍地址</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td style="white-space: nowrap">
+                                    <button style="" type="button" class="layui-btn layui-btn-xs layui-btn-normal">处理</button>
+                                    <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">查看</button>
+                                </td>
+                                <td style="white-space: nowrap">晓汉堡</td>
+                                <td style="white-space: nowrap">男</td>
+                                <td style="white-space: nowrap">18</td>
+                                <td style="white-space: nowrap">138xxxxxxxx</td>
+                                <td style="white-space: nowrap">血压</td>
+                                <td style="white-space: nowrap"><font style="font-weight: bold; background-color: yellow">指标异常预警</font></td>
+                                <td style="white-space: nowrap">185/88mmHg</td>
+                                <td style="white-space: nowrap">单纯收缩期高血压</td>
+                                <td style="white-space: nowrap">2020-12-18 18:21:00</td>
+                                <td>7天前</td>
+                                <td style="white-space: nowrap">吉林大学第一医院</td>
+                                <td>吉林省>长春市>朝阳区>金融家苑</td>
+                            </tr>
+                            <tr>
+                                <td style="white-space: nowrap">
+                                    <a href="../预警处理.html" class="layui-btn layui-btn-xs layui-btn-normal">处理</a>
+                                    <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">查看</button>
+                                </td>
+                                <td style="white-space: nowrap">小朗朗</td>
+                                <td style="white-space: nowrap">男</td>
+                                <td style="white-space: nowrap">18</td>
+                                <td style="white-space: nowrap">138xxxxxxxx</td>
+                                <td style="white-space: nowrap">血压</td>
+                                <td style="white-space: nowrap"><font style="font-weight: bold; background-color: red">个人危机值预警</font></td>
+                                <td style="white-space: nowrap">185/88mmHg</td>
+                                <td style="white-space: nowrap">单纯收缩期高血压</td>
+                                <td style="white-space: nowrap">2020-12-18 18:21:00</td>
+                                <td>7天前</td>
+                                <td style="white-space: nowrap">吉林大学第一医院</td>
+                                <td>吉林省>长春市>朝阳区>金融家苑</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var teamInfoVm = new Vue({
+        el : '#teamInfoTable',
+        data : {
+            teamName:"test",
+            teamInfos : [{
+                teamType : 1,
+                creator : 1,
+                teamSize : 1,
+                teamDescribe : 1,
+                teamStatus : 1
+            },
+            ],
+        }
+
+    })
+</script>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    layui.use('form',function () {
+        var form = layui.form;
+    })
+    layui.use('button',function () {
+        var button = layui.button;
+    })
+
+</script>
+<!--<script>
+    $('#left_nav_bar').load("../leftNavBar.html")
+</script>-->
+
+<script>
+    var height = $(window).height();
+    $('#leftNavBar').css("height",height);
+</script>
+</body>
+</html>

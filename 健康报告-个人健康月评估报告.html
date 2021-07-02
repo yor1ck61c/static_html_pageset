@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+
+    <title>健康报告-个人健康月评估报告</title>
+</head>
+<body>
+
+<div class="layui-container">
+
+    <div class="layui-row">
+        <!--左侧导航-->
+        <div id="left_nav_bar" class="layui-col-md3">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">快捷菜单</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="quickMenu/首页.html">首页</a></dd>
+                        <dd><a href="quickMenu/预警监控.html">预警监控</a></dd>
+                        <dd><a href="quickMenu/工作提醒.html">工作提醒</a></dd>
+                        <dd><a href="javascript:;">医患交流</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康干预</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">预警处置</a></dd>
+                        <dd><a href="health_interfere/healthReport.html">健康报告</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">签约建档</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="sign&record/basicRecord.html">基本档案</a></dd>
+                        <dd><a href="sign&record/signManage.html">签约管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">内分泌科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">心内科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">体检科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康数据</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">体征数据</a></dd>
+                        <dd><a href="health_data/生化数据.html">生化数据</a></dd>
+                        <dd><a href="javascript:;">电生理数据</a></dd>
+                        <dd><a href="javascript:;">影像数据</a></dd>
+                        <dd><a href="javascript:;">其他检查</a></dd>
+                        <dd><a href="javascript:;">全部查询</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">报表管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">系统配置</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="system_config/doctorsTeam.html">医生团队</a></dd>
+                        <dd><a href="system_config/contractedServicePackage.html">签约服务包</a></dd>
+                        <dd><a href="javascript:;">筛查APP账号</a></dd>
+                        <dd><a href="system_config/deviceStockManagement.html">设备库存管理</a></dd>
+                        <dd><a href="javascript:;">医嘱模板</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--右侧页面主体-->
+        <div style="margin-top: 5px" class="layui-col-md9">
+            <!--面包屑导航-->
+            <span style="margin-left: 20px;" class="layui-breadcrumb">
+                <a>健康干预</a>
+                <a><cite>健康报告</cite></a>
+                <a><cite>审核报告</cite></a>
+            </span>
+            <!--面包屑导航下面的返回键-->
+            <div class="layui-tab">
+                <a href="health_interfere/healthReport.html" style="margin-left: 20px" type="button" class="layui-btn layui-btn-xs layui-btn-normal">
+                    &nbsp&nbsp&nbsp&nbsp返回&nbsp&nbsp&nbsp&nbsp
+                </a>
+                <div class="layui-tab-item layui-show">
+                    <div style="border: 1px #9F9F9F solid;width: 1300px; margin-left: 20px; margin-right: 10px; margin-top:10px;" class="right-div">
+                        <!--表格-->
+                        <div class="layui-row">
+                            <form class="layui-form" action="" style="margin-left: 10px">
+                                <table style="margin-left: 10px; margin-top: 10px">
+                                    <td style="width: 400px; font-size: 16px; color: #777777">
+                                        报告统计：<font style="color: mediumseagreen; font-weight: bold">1135</font>
+                                    </td>
+                                    <td style="font-size: 16px; color: #777777">今日检测：</td>
+                                    <td style="width: 100px; font-size: 16px; color: #777777">
+                                        已处理<font style="color: mediumseagreen; font-weight: bold">0</font>份
+                                    </td>
+                                    <td style="width: 100px; font-size: 16px; color: #777777">
+                                        待处理<font style="color: mediumseagreen; font-weight: bold">5</font>份
+                                    </td>
+                                </table>
+                            </form>
+                            <hr style="margin-left: 10px; width: 1279px">
+                            <form>
+                                <table style="width: 1300px;">
+                                    <thead>
+                                        <td style="font-weight: bold; font-size: 18px; color: #009688; text-align: center; width: 1300px">
+                                            个人健康月评估报告
+                                        </td>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td style="color: #009688; text-align: center">报告人：小浪浪</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color: #009688; text-align: center">（报告时间：2020-01）</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                            <div>
+                                <div class="layui-row">
+                                    <!--基本信息-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        基本信息
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid;">
+                                        <!--病患照片-->
+                                        <div class="layui-col-md1" style="">
+                                            <div id="img" style="width: 50px;height: 50px;border: #777777 solid 1px">
+
+                                            </div>
+                                        </div>
+                                        <div class="layui-col-md11">
+                                            <table style="margin-top: 10px;">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width: 400px; font-weight: normal">身份证号：220122xxxx01010001</th>
+                                                    <th style="width: 400px; font-weight: normal">姓名：老八</th>
+                                                    <th style="width: 400px; font-weight: normal">出生日期：1915-01-01</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td><hr style="margin-top: 10px;"/></td>
+                                                    <td><hr style="margin-top: 10px;"/></td>
+                                                    <td><hr style="margin-top: 10px; margin-right: 10px"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>年龄：74</td>
+                                                    <td>性别：男性</td>
+                                                    <td>民族：汉族</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><hr style="margin-top: 10px;"/></td>
+                                                    <td><hr style="margin-top: 10px;"/></td>
+                                                    <td><hr style="margin-top: 10px; margin-right: 10px"/></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>本人电话：136xxxxxxxx</td>
+                                                    <td>紧急联系人：冯诺依曼</td>
+                                                    <td>紧急联系人电话：139xxxxxxxx</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><hr style="margin-top: 10px;"/></td>
+                                                    <td><hr style="margin-top: 10px;"/></td>
+                                                    <td><hr style="margin-top: 10px; margin-right: 10px"/></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="layui-row">
+                                            <table style="margin-left: 10px; margin-bottom: 10px;">
+                                                <thead>
+                                                <tr>
+                                                    <th style="width: 1325px; font-weight: normal">户籍地址：辽宁省大连市中山区大连中心裕景</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>现住址：长沙</td>
+                                                </tr>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>血型：AB&nbsp&nbsp&nbsp&nbspRH:不详</td>
+                                                </tr>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>婚姻状况：未说明</td>
+                                                </tr>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>疾病史：无</td>
+                                                </tr>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>家族史：父亲：无&nbsp&nbsp&nbsp&nbsp
+                                                        母亲：无&nbsp&nbsp&nbsp&nbsp
+                                                        兄弟姐妹：无&nbsp&nbsp&nbsp&nbsp
+                                                        子女：无&nbsp&nbsp&nbsp&nbsp</td>
+                                                </tr>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>遗传病史：无</td>
+                                                </tr>
+                                                <tr><td><hr style="margin-top: 10px; margin-right: 10px"/></td></tr>
+                                                <tr>
+                                                    <td>过敏源：无</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!--确诊信息-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        确诊信息
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+                                        <table class="layui-table">
+                                            <colgroup>
+                                                <col width="400">
+                                                <col width="450">
+                                                <col>
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th>确诊疾病</th>
+                                                <th>确诊时间</th>
+                                                <th>病程时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>食物中毒</td>
+                                                <td>2020-01</td>
+                                                <td>7个月</td>
+                                            </tr>
+                                            <tr>
+                                                <td>战争综合症</td>
+                                                <td>2020-03</td>
+                                                <td>5个月</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--健康评估摘要-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        健康评估摘要
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid;">
+                                        <div class="layui-row" style="height: 200px">
+                                            <p style="color: #777777">
+                                                性别：男，年龄：74岁。体重超轻。战争综合症复发频率较明显，进食时会明显发出“咔咔”声。
+                                            </p>
+                                        </div>
+                                        <hr/>
+                                        <div class="layui-row" style="margin-right: 10px; margin-left: 10px">
+                                            <div class="layui-col-md8">
+                                                Hello, image.
+                                            </div>
+                                            <div class="layui-col-md4">
+                                                <table class="layui-table">
+                                                    <colgroup>
+                                                        <col width="160">
+                                                        <col width="20">
+                                                    </colgroup>
+                                                    <thead>
+                                                    <tr>
+                                                        <th>名称</th>
+                                                        <th>等级</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>高血压心血管疾病发病等级</td>
+                                                        <td>极高危</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>高血压心血管疾病发病等级</td>
+                                                        <td>极高危</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>高血压心血管疾病发病等级</td>
+                                                        <td>极高危</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>高血压心血管疾病发病等级</td>
+                                                        <td>极高危</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>高血压心血管疾病发病等级</td>
+                                                        <td>极高危</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>高血压心血管疾病发病等级</td>
+                                                        <td>极高危</td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--最新检测指标-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        最新检测指标
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px;">
+                                        <table class="layui-table">
+                                            <thead>
+                                            <tr>
+                                                <th style="width: 150px; text-align: center">检查项目</th>
+                                                <th style="width: 100px; text-align: center">最近检测结果</th>
+                                                <th style="width: 500px; text-align: center">正常范围值</th>
+                                                <th style="width: 100px; text-align: center">分析结果</th>
+                                                <th style="width: 500px; text-align: center">检查时间</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td style="text-align: center">血糖</td>
+                                                <td style="text-align: center">126/85mmHg</td>
+                                                <td style="text-align: center">90~140/60~90mmHg</td>
+                                                <td style="text-align: center">正常高值</td>
+                                                <td style="text-align: center">2020-01-01 00:00:00</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center">餐后2H血糖</td>
+                                                <td style="text-align: center">2.1mmol/L</td>
+                                                <td style="text-align: center">3.9~7.7mmol/L</td>
+                                                <td style="text-align: center">偏低</td>
+                                                <td style="text-align: center">2020-01-01 00:00:00</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--血压-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        干预状况
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid; height: 300px">
+                                        <div class="layui-col-md8">
+                                            <table class="layui-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        血压日平均趋势（单位：mmHg）
+                                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        平均值：125/86
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <p>Hello,image.</p>
+                                        </div>
+                                        <div class="layui-col-md4">
+                                            <table class="layui-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>检测分布</th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <p>Hello,image.</p>
+                                        </div>
+                                    </div>
+                                    <!--餐后2H血糖-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        餐后2H血糖
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid; height: 300px">
+                                        <div class="layui-col-md8">
+                                            <table class="layui-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        餐后2H血糖平均趋势（单位：mmol/L）
+                                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        平均值：0&nbsp&nbsp最高值：0&nbsp&nbsp最低值：0
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <p>Hello,image.</p>
+                                        </div>
+                                        <div class="layui-col-md4">
+                                            <table class="layui-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>检测分布</th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <p>Hello,image.</p>
+                                        </div>
+                                    </div>
+                                    <!--总胆固醇-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        总胆固醇
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid; height: 300px">
+                                        <div class="layui-col-md8">
+                                            <table class="layui-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>
+                                                        总胆固醇日平均趋势（单位：mmol/L）
+                                                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                                        平均值：0&nbsp&nbsp最高值：0&nbsp&nbsp最低值：0
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <p>Hello,image.</p>
+                                        </div>
+                                        <div class="layui-col-md4">
+                                            <table class="layui-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>检测分布</th>
+                                                </tr>
+                                                </thead>
+                                            </table>
+                                            <p>Hello,image.</p>
+                                        </div>
+                                    </div>
+                                    <!--干预状况-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        干预状况
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid">
+                                        <table class="layui-table">
+                                            <colgroup>
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th>心脏疾病</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                        <table class="layui-table">
+                                            <tbody>
+                                            <tr>
+                                                <td>本期治疗计划</td>
+                                                <td>疗程：2020-01-01~2020-01-02 血压控制目标：--mmHg</td>
+                                            </tr>
+                                            <tr>
+                                                <td>药物治疗</td>
+                                                <td>阿莫西林</td>
+                                            </tr>
+                                            <tr>
+                                                <td>生活指导</td>
+                                                <td>膳食建议：少盐少糖少油，多吃蔬菜水果，适当运动</td>
+                                            </tr>
+                                            <tr>
+                                                <td>医嘱</td>
+                                                <td>无</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="layui-table">
+                                            <colgroup>
+                                            </colgroup>
+                                            <thead>
+                                            <tr>
+                                                <th>高血压</th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                        <table class="layui-table">
+                                            <tbody>
+                                            <tr>
+                                                <td>本期治疗计划</td>
+                                                <td>疗程：2020-01-01~2020-01-02 血压控制目标：--mmHg</td>
+                                            </tr>
+                                            <tr>
+                                                <td>药物治疗</td>
+                                                <td>阿莫西林</td>
+                                            </tr>
+                                            <tr>
+                                                <td>生活指导</td>
+                                                <td>膳食建议：少盐少糖少油，多吃蔬菜水果，适当运动</td>
+                                            </tr>
+                                            <tr>
+                                                <td>医嘱</td>
+                                                <td>无</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--随访报告-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        随访报告
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid;">
+                                        <p style="color: #777777; font-weight: bold; font-size: 20px; text-align: center; margin-top: 20px; margin-bottom: 20px">
+                                            暂无随访报告
+                                        </p>
+                                    </div>
+                                    <!--检测概况-->
+                                    <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        检测概况
+                                    </p>
+                                    <div class="layui-row" style="margin-left: 10px; margin-right: 10px; margin-bottom: 10px; border: #777777 1px solid; height: 200px">
+                                        <p style="color: #777777">
+                                            本月检测心率0次；
+                                        </p>
+                                        <p style="color: #777777">
+                                            本月检测血压0次，平均值0，最高值0，最低值0；
+                                        </p>
+                                        <p style="color: #777777">
+                                            本月检测心率0次，平均值0，最高值0，最低值0；
+                                        </p>
+                                        <p style="color: #777777">
+                                            本月检测餐前血糖0次。
+                                        </p>
+                                    </div>
+                                    <!--医嘱建议-->
+                                    <div class="layui-row">
+                                        <p style="font-weight: bold; font-size: 16px; color: #009688; margin-left: 10px; margin-top: 10px; margin-bottom: 10px;">
+                                        医嘱建议
+                                        </p>
+                                        <div class="container" style="margin-left: -1px">
+                                            <div class="row">
+                                                <div class="col-2">
+                                                    <p style="color: #009688">医嘱模板：</p>
+                                                </div>
+                                                <div class="col-6" style="margin-left: -100px">
+                                                    <select name="city" lay-verify="" style="width: 100px">
+                                                        <option value="">冠心病</option>
+                                                        <option value="010">战争综合症</option>
+                                                        <option value="021">战争综合症</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="layui-row" style="margin:10px; border: #777777 1px solid; height: 150px">
+                                        <p style="color: #777777">
+                                            少吃奥利给，多吃老八秘制小汉堡。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--保存、打印按钮-->
+                <div class="layui-row" style="margin-bottom: 40px; white-space: normal; width: 1325px">
+                    <form class="layui-form" action="" style="text-align: center">
+                        <div style="margin-top: 20px;" class="layui-form-item">
+                            <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">
+                                &nbsp&nbsp&nbsp&nbsp保存&nbsp&nbsp&nbsp&nbsp
+                            </button>
+                            <button type="button" class="layui-btn layui-btn-xs layui-btn-warm">
+                                &nbsp&nbsp&nbsp&nbsp打印&nbsp&nbsp&nbsp&nbsp
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var teamInfoVm = new Vue({
+            el : '#teamInfoTable',
+            data : {
+                teamName:"test",
+                teamInfos : [{
+                    teamType : 1,
+                    creator : 1,
+                    teamSize : 1,
+                    teamDescribe : 1,
+                    teamStatus : 1
+                },
+                ],
+            }
+
+        })
+    </script>
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+    <script>
+        layui.use('laydate', function(){
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#test1' //指定元素
+            });
+        });
+    </script>
+    <script>
+        //一般直接写在一个js文件中
+        layui.use('element', function(){
+            var element = layui.element;
+        });
+        layui.use('form',function () {
+            var form = layui.form;
+        })
+        layui.use('button',function () {
+            var button = layui.button;
+        })
+
+    </script>
+    <!--<script>
+        $('#left_nav_bar').load("../leftNavBar.html")
+    </script>-->
+
+    <script>
+        var height = $(window).height();
+        $('#leftNavBar').css("height",height);
+    </script>
+</body>
+</html>

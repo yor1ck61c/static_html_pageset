@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+    <title>预警处理</title>
+</head>
+<body>
+
+<!--右上角返回键-->
+<a href="health_interfere/预警处置.html" class="btn btn-outline-primary" style="margin-left: 10px; margin-top: 10px;">返回</a>
+<h3 style="text-align: center; color: #777777">预警处理</h3>
+
+<!--信息栏：姓名、性别、年龄、电话、身份证-->
+<table style="margin-left: 20px; margin-top: 20px; margin-bottom: 10px;">
+    <thead style="white-space: nowrap">
+        <th style="width: 300px">姓名：小浪浪</th>
+        <th style="width: 300px">性别：男</th>
+        <th style="width: 300px">年龄：100</th>
+        <th style="width: 300px">电话：13888888888</th>
+        <th style="width: 300px">身份证：220122192001010011</th>
+    </thead>
+</table>
+
+<div class="layui-container" style="width: 1500px;">
+    <div class="layui-row" style="border: 1px #9F9F9F solid">
+        <div class="layui-col-md1" style="border: 1px #9F9F9F solid; color: #009688">
+            <p style="margin-bottom: 20px; margin-top: 25px; color: #777777; font-weight: bold">预警信息</p>
+        </div>
+        <div class="layui-col-md2">
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold">检测指标：血压</p>
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold; margin-bottom: 10px">预警时间：一周前</p>
+        </div>
+        <div class="layui-col-md3">
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold">检测值：185/88mmHg</p>
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold; margin-bottom: 10px">预警类型名称：指标异常预警</p>
+        </div>
+        <div class="layui-col-md3">
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold">分析结果：单纯收缩期高血压</p>
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold; margin-bottom: 10px">预警描述：暂无描述</p>
+        </div>
+        <div class="layui-col-md3">
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold">检测时间：2020-01-01 00:00</p>
+            <p style="margin-left: 10px; margin-top: 10px; color: #777777; font-weight: bold; margin-bottom: 10px">参考值：</p>
+        </div>
+    </div>
+    <div class="layui-row" style="border: #777777 1px solid">
+        <div class="layui-col-md2">
+            <p style="margin-top: 10px; color: #777777; margin-left: 10px; margin-bottom: 10px; font-weight: bold">确诊疾病</p>
+        </div>
+        <div class="layui-col-md2">
+            <p style="margin-top: 10px; color: #777777; margin-left: 10px; margin-bottom: 10px; font-weight: bold">确诊时间</p>
+        </div>
+        <div class="layui-col-md2">
+            <p style="margin-top: 10px; color: #777777; margin-left: 10px; margin-bottom: 10px; font-weight: bold">病程（月）</p>
+        </div>
+        <div class="layui-col-md2">
+            <p style="margin-top: 10px; color: #777777; margin-left: 10px; margin-bottom: 10px; font-weight: bold">责任医生</p>
+        </div>
+        <div class="layui-col-md2">
+            <p style="margin-top: 10px; color: #777777; margin-left: 10px; margin-bottom: 10px; font-weight: bold">责任科室</p>
+        </div>
+        <div class="layui-col-md2">
+            <p style="margin-top: 10px; color: #777777; margin-left: 10px; margin-bottom: 10px; font-weight: bold">责任医院</p>
+        </div>
+    </div>
+    <div class="layui-row" style="border: #777777 1px solid;">
+        <p style="text-align: center; margin-top: 10px; margin-bottom: 10px; color: #777777; font-weight: bold">暂无数据</p>
+    </div>
+
+    <!--处理信息部分-->
+    <div class="layui-row" style="border: #777777 1px solid">
+        <div class="layui-col-md2" style="border: #777777 1px solid">
+            <p style=" font-weight: bold">处理信息</p>
+        </div>
+        <div class="layui-col-md10">
+            <table style="margin-left: 10px; margin-top: 10px;">
+                <thead>
+                <th style="font-weight: normal; margin-top: 10px; color: #777777; font-weight: bold">处理医生：</th>
+                <th>
+                    <input type="text" name="title" required lay-verify="required" style="width: 200px; font-weight: normal"
+                           placeholder="宋医生" autocomplete="off" class="layui-input">
+                </th>
+                <th>
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal"
+                            style="margin-left: 10px">在线交流</button>
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">去干预</button>
+                    <button type="button" class="layui-btn layui-btn-sm layui-btn-normal">去随访</button>
+                </th>
+                </thead>
+            </table>
+            <div class="layui-row" style="margin-left: 10px; margin-top: 10px; white-space: nowrap">
+                <p style="font-weight: normal; margin-top: 10px; color: #777777; font-weight: bold">处理意见：
+                    <input type="radio" name="sex" value="nan" title="男" checked>
+                    <input type="radio" name="sex" value="nv" title="女">
+                    <input type="radio" name="sex" value="" title="中性">
+                </p>
+            </div>
+            <table style="margin-left: 10px; margin-top: 10px; color: #777777">
+                <textarea name="" required lay-verify="required" placeholder="请输入处理意见..."
+                          class="layui-textarea" style="margin-left: 10px; margin-top: 10px; width: 1200px"></textarea>
+            </table>
+        </div>
+    </div>
+</div>
+<!--最下保存键-->
+<button type="button" class="btn btn-outline-primary" style="margin-left: 48%; margin-top: 20px">保存</button>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+
+    });
+</script>
+</body>
+</html>

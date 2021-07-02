@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+    <title>基本档案</title>
+</head>
+<body>
+
+<div class="layui-container">
+
+    <div class="layui-row">
+
+
+        <!--左侧导航栏-->
+        <div id="left_nav_bar" class="layui-col-md-3">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">快捷菜单</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">首页</a></dd>
+                        <dd><a href="../quickMenu/预警监控.html">预警监控</a></dd>
+                        <dd><a href="../quickMenu/工作提醒.html">工作提醒</a></dd>
+                        <dd><a href="javascript:;">医患交流</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康干预</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">预警处置</a></dd>
+                        <dd><a href="../health_interfere/healthReport.html">健康报告</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">签约建档</a>
+                    <dl class="layui-nav-child">
+                        <dd class="layui-this"><a href="../sign&record/basicRecord.html">基本档案</a></dd>
+                        <dd><a href="../sign&record/signManage.html">签约管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">内分泌科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">心内科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">体检科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康数据</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">体征数据</a></dd>
+                        <dd><a href="../health_data/生化数据.html">生化数据</a></dd>
+                        <dd><a href="javascript:;">电生理数据</a></dd>
+                        <dd><a href="javascript:;">影像数据</a></dd>
+                        <dd><a href="javascript:;">其他检查</a></dd>
+                        <dd><a href="javascript:;">全部查询</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">报表管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">系统配置</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../system_config/doctorsTeam.html">医生团队</a></dd>
+                        <dd><a href="../system_config/contractedServicePackage.html">签约服务包</a></dd>
+                        <dd><a href="javascript:;">筛查APP账号</a></dd>
+                        <dd><a href="../system_config/deviceStockManagement.html">设备库存管理</a></dd>
+                        <dd><a href="javascript:;">医嘱模板</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--网页主体-->
+        <div style="margin-top: 5px" class="layui-col-lg-9">
+
+            <!--路径导航-->
+            <span style="margin-left: 20px;" class="layui-breadcrumb">
+                <a>签约建档</a>
+                <a><cite>基本档案</cite></a>
+            </span>
+
+            <!--条件搜索，居民建档-->
+            <div style="border: 1px #9F9F9F solid; margin-left: 10px; margin-top:10px;" class="layui-container">
+                <div class="layui-row">
+                    <form class="layui-form" action="">
+                        <div id="searchDevice" style="margin-top: 5px;" class="layui-form-item">
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input style="width: 100px" v-model="search.name" type="text" lay-verify="required" placeholder="姓名" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input style="width:150px" id="startDate" v-model="search.startTime" type="text" lay-verify="required" placeholder="建档开始时间" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input style="width:150px" id="endDate" v-model="search.endTime" type="text" lay-verify="required" placeholder="建档结束时间" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <div  style="margin-top: 5px;width: 150px" class="layui-inline">
+                                <select v-model="search.status"  lay-verify="">
+                                    <option value="" disabled selected>请选择合同状态</option>
+                                    <option>请选择合同状态</option>
+                                </select>
+                            </div>
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input style="width:100px" v-model="search.doctorName" type="text" lay-verify="required" placeholder="建档医生" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input style="width:120px" v-model="search.organization" type="text" lay-verify="required" placeholder="" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <button type="button" class="layui-btn layui-btn-warm" @click="check">搜索</button>
+                            <button type="button" class="layui-btn layui-btn-normal" data-toggle="modal" data-target="#residentSign">居民建档</button>
+
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="deviceInfoTable" class="layui-row">
+                    <table style="text-align: center" class="layui-table">
+                        <colgroup>
+                            <col width="330">
+                            <col width="200">
+                            <col width="150">
+                            <col width="150">
+                            <col width="200">
+                            <col width="200">
+                            <col width="150">
+                            <col width="200">
+                            <col width="200">
+                            <col width="200">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th style="text-align: center">操作</th>
+                            <th style="text-align: center">姓名</th>
+                            <th style="text-align: center">身份证号</th>
+                            <th style="text-align: center">性别</th>
+                            <th style="text-align: center">年龄</th>
+                            <th style="text-align: center">联系电话</th>
+                            <th style="text-align: center">确诊疾病</th>
+                            <th style="text-align: center">建档人</th>
+                            <th style="text-align: center">建档时间</th>
+                            <th style="text-align: center">建档机构</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="info in deviceStockInfo">
+                            <td>
+                                <div class="layui-inline">
+                                    <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">编辑</button>
+                                    <button type="button" class="layui-btn layui-btn-xs layui-btn-normal">删除</button>
+                                </div>
+                            </td>
+                            <td><a href="../recordDetails.html">{{info.txtDeviceVendor}}</a></td>
+                            <td>{{info.txtDeviceType}}</td>
+                            <td>{{info.txtDeviceSerialNum}}</td>
+                            <td>{{info.txtUsingStatus}}</td>
+                            <td>{{info.txtRunningStatus}}</td>
+                            <td>{{info.txtSubscriber}}</td>
+                            <td>{{info.txtPhoneNum}}</td>
+                            <td>{{info.txtInTime}}</td>
+                            <td>{{info.txtInTime}}</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="residentSign" tabindex="-1" role="dialog" aria-labelledby="residentSign" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="residentSignTitle">居民建档</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container" >
+                        <div class="row"  >
+                            <div style="width: 100%;margin-top: 10px;margin-bottom: 10px;text-align: center; font-size: 24px">个人基本信息表</div>
+                            <div style="width: 100%;margin-top: 10px;margin-bottom: 10px;"> <span style="margin-left: 10px"> * 姓名:</span> <span>
+      <input>
+      </span> <span style="float: right;margin-right: 10px;"> 编号：
+      <input>
+      </span> </div>
+                        </div>
+                        <div class="row" style="font-size: 16px; text-align: center">
+                            <table width="100%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td width="10%">&nbsp;*身份证号</td>
+                                    <td><input type="text" style="width: 100%"></td>
+                                    <td width="10%">&nbsp;*性别</td>
+                                    <td><span id="unknownGender">0 未知的性别</span> <span id="male" style="margin-left: 5px">1 男性</span> <span id="female" style="margin-left: 5px">2 女性</span> <span id="unDescribe" style="margin-left: 5px">9 未说明的性别</span> <span style="float: right;margin-right: 5px">
+            <input id="gender" style="width: 30px; "></td>
+                                    </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table width="100%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td width="10%">&nbsp;*出生日期</td>
+                                    <td><input type="date" style="width: 100%"></td>
+                                    <td width="10%">&nbsp;*常住类型</td>
+                                    <td><span id="registered" style="margin-left: 5px">1 户籍</span> <span id="unRegistered" style="margin-left: 5px">2 非户籍</span> <span style="float: right;margin-right: 5px">
+            <input id="isRegistered" style="width: 30px; ">
+            </span></td>
+                                    <td width="10%">&nbsp;民族</td>
+                                    <td ><select style="width: 100%;">
+                                        <option>汉族</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;*本人电话</td>
+                                    <td><input style="width: 100%"></td>
+                                    <td>&nbsp;联系人姓名</td>
+                                    <td><input style="width: 100%"></td>
+                                    <td>&nbsp;联系人电话</td>
+                                    <td><input style="width: 100%"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table width="100%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td width="10%">&nbsp;户籍地址</td>
+                                    <td><input style="width: 100%"></td>
+                                    <td width="10%">&nbsp;现住址</td>
+                                    <td><input style="width: 100%"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table width="100%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td width="10%">&nbsp;血型</td>
+                                    <td><span>1.A型</span> <span style="margin-left: 10px">2.B型</span> <span style="margin-left: 10px">3.O型</span> <span style="margin-left: 10px">4.AB型</span> <span style="margin-left: 10px">5.不详</span> <span style="margin-left: 10px;margin-right: 10px">/</span> <span>RH:</span> <span>1.阳性</span> <span style="margin-left: 10px">2.阴性</span> <span style="margin-left: 10px">3.不详</span>
+                                        <span style="float: right; margin-right: 5px">
+            <input id="bloodType" style="width: 30px; ">
+            /
+            <input id="rh_type" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;婚姻状况</td>
+                                    <td><span>1.未婚</span> <span style="margin-left: 10px">2.已婚</span> <span style="margin-left: 10px">3.丧偶</span> <span style="margin-left: 10px">4.离婚</span> <span style="margin-left: 10px">5.未说明的婚姻状况</span> <span style="float: right; margin-right: 5px">
+            <input id="love_story" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;文化程度</td>
+                                    <td><span>1.研究生</span> <span style="margin-left: 10px">2.大学本科</span> <span style="margin-left: 10px">3.大学专科和专科院校</span> <span style="margin-left: 10px">4.中等专业学校</span> <span style="margin-left: 10px">5.技工学校</span> <span style="margin-left: 10px">6.高中</span> <span style="margin-left: 10px">7.初中</span> <span style="margin-left: 10px">8.小学</span> <span style="margin-left: 10px">9.文盲和半文盲</span> <span style="margin-left: 10px">10.不详</span> <span style="float: right; margin-right: 5px">
+            <input id="eduLevel" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;职业</td>
+                                    <td><span>0.国家机关、党群组织、企业、事业单位负责人</span> <span style="margin-left: 10px">1.专业技术人员</span> <span style="margin-left: 10px">2.办事人员和有关人员</span> <span style="margin-left: 10px">3.商业、服务业人员</span><br>
+                                        <span style="margin-left: 10px">4.农、林、牧、渔、水利业生产人员</span> <span style="margin-left: 10px">5.生产、运输设备操作人员及有关人员</span> <span style="margin-left: 10px">6.军人</span> <span style="margin-left: 10px">7.不便分类的其他从业人员</span> <span style="margin-left: 10px">8.无职业</span> <span style="float: right; margin-right: 5px; margin-top: -10px">
+            <input id="job" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                <tr>
+                                    <td>医疗费用<br>
+                                        支付方式</td>
+                                    <td><span style="margin-left: 10px">1.城镇职工基本医疗保险</span> <span style="margin-left: 10px">2.城镇居民基本医疗保险</span> <span style="margin-left: 10px">3.新型农村合作医疗</span> <span style="margin-left: 10px">4.贫困救助</span> <span style="margin-left: 10px">5.商业医疗保险</span> <span style="margin-left: 10px">6.全公费</span> <span style="margin-left: 10px">7.全自费</span><br>
+                                        <span style="margin-left: 10px">8.其他
+            <input style="margin-left: 5px">
+            </span> <span style="float: right; margin-right: 5px; margin-top: -10px">
+            <input id="pay" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;药物过敏史</td>
+                                    <td><span>0.无</span> <span style="margin-left: 10px">101.青霉素类抗生素</span> <span style="margin-left: 10px">102.磺胺类抗生素</span> <span style="margin-left: 10px">103.头孢类抗生素</span> <span style="margin-left: 10px">104.含碘药品</span> <span style="margin-left: 10px">105.酒精</span> <span style="margin-left: 10px">106.镇静麻醉剂</span><br>
+                                        <span style="margin-left: 10px">199.其他药物过敏源
+            <input style="margin-left: 5px">
+            </span> <span style="margin-left: 10px">1.猪肉</span> <span style="margin-left: 10px">2.羊肉</span> <span style="margin-left: 10px">3.牛肉</span> <span style="margin-left: 10px">4.牛奶</span> <span style="margin-left: 10px">5.蛋及蛋制品</span> <span style="margin-left: 10px">6.鸡、鸭等禽类食品</span><br>
+                                        <span style="margin-left: 10px">7.鱼、虾等水产类食品</span> <span style="margin-left: 10px">8.水果（包括带壳的果仁）</span> <span style="margin-left: 10px">299.其他食物过敏源
+            <input style="margin-left: 5px">
+            </span><br>
+                                        <span style="margin-left: 10px">301.植物花粉</span> <span style="margin-left: 10px">302.动物毛发</span> <span style="margin-left: 10px">303.空气粉尘</span> <span style="margin-left: 10px;">399.其他环境过敏源
+            <input style="margin-left: 5px">
+            </span><br>
+                                        <span style="margin-left: 10px">4.混合型过敏原
+            <input style="margin-left: 5px">
+            </span> <span style="margin-left: 10px">9.其他过敏原
+            <input style="margin-left: 5px">
+            </span> <span style="float: right; margin-right: 5px;">
+            <input id="allergic" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;暴露史</td>
+                                    <td><span>1.无</span> <span style="margin-left: 10px">2.化学品</span> <span style="margin-left: 10px">3.毒物</span> <span style="margin-left: 10px">4.射线</span> <span style="float: right; margin-right: 5px;">
+            <input id="expose" style="width: 30px; ">
+            </span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table width="10%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td height="150px">&nbsp;既往史</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table width="90%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td width="10%">&nbsp;疾病</td>
+                                    <td><span>1.无</span> <span style="margin-left: 10px">2.高血压</span> <span style="margin-left: 10px">3.糖尿病</span> <span style="margin-left: 10px">4.冠心病</span> <span style="margin-left: 10px">5.慢性阻塞性肺疾病</span> <span style="margin-left: 10px">6.恶性肿瘤</span> <span style="margin-left: 10px">7.脑卒中</span> <span style="margin-left: 10px">8.严重精神障碍</span> <span style="margin-left: 10px">9.结核病</span> <span style="margin-left: 10px">10.肝炎</span><span margin-left: 10px><br>11.其他法定传染病</span> <span style="margin-left: 10px">12.职业病</span> <span style="margin-left: 10px">13.其他</span>
+                                        <span style="float: right; margin-right: 5px;">
+            	  <input id="disease1" style="width: 30px; "> / <input id="disease2" style="width: 30px; "> /
+				  <input id="disease3" style="width: 30px; ">
+              </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;手术</td>
+                                    <td>
+                                        <span>1.无</span>
+                                        <span style="margin-left: 10px">2.有</span>
+                                        <span style="float: right; margin-right: 5px;">
+            	  <input id="operation" style="width: 30px; ">
+              </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;外伤</td>
+                                    <td>
+                                        <span>1.无</span>
+                                        <span style="margin-left: 10px">2.有</span>
+                                        <span style="float: right; margin-right: 5px;">
+            	  <input id="wound" style="width: 30px; ">
+              </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;输血</td>
+                                    <td>
+                                        <span>1.无</span>
+                                        <span style="margin-left: 10px">2.有</span>
+                                        <span style="float: right; margin-right: 5px;">
+            	  <input id="blood_in" style="width: 30px; ">
+              </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <table width="100%" border="1">
+                                <tbody>
+                                <tr>
+                                    <td width="10%">&nbsp;家族史</td>
+                                    <td>
+                                        <span>1.无</span> <span style="margin-left: 10px">2.高血压</span> <span style="margin-left: 10px">3.糖尿病</span> <span style="margin-left: 10px">4.冠心病</span> <span style="margin-left: 10px">5.慢性阻塞性肺疾病</span> <span style="margin-left: 10px">6.恶性肿瘤</span> <span style="margin-left: 10px">7.脑卒中</span> <span style="margin-left: 10px">8.严重精神障碍</span> <span style="margin-left: 10px">9.结核病</span> <span style="margin-left: 10px">10.肝炎</span><span style="margin-left: 10px">11.其他法定传染病</span><br> <span style="margin-left: 10px">12.职业病</span> <span style="margin-left: 10px">13.其他</span><br>
+                                        <span>
+				  父亲：
+			  <input id="father_disease1" style="width: 30px; ">
+            /
+            <input id="father_disease2" style="width: 30px; ">
+			  </span>
+                                        <span style="margin-left: 20px">
+				  母亲：
+			  <input id="mother_disease1" style="width: 30px; ">
+            /
+            <input id="mother_disease2" style="width: 30px; ">
+			  </span>
+                                        <span style="margin-left: 20px">
+				  子女：
+			  <input id="children_disease1" style="width: 30px; ">
+            /
+            <input id="children_disease2" style="width: 30px; ">
+			  </span>
+                                        <span style="margin-left: 20px">
+				  兄弟姐妹：
+			  <input id="brother_disease1" style="width: 30px; ">
+            /
+            <input id="brother_disease2" style="width: 30px; ">
+			  </span>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: '#deviceInfoTable',
+        data: {
+            deviceStockInfo: [{
+                txtDeviceVendor:"华为",
+                txtDeviceType:"LIO-AL00",
+                txtDeviceSerialNum:"QWE123",
+                txtUsingStatus:"运行中",
+                txtRunningStatus:"1",
+                txtSubscriber:"yorick61c",
+                txtPhoneNum:"18569630601",
+                txtInTime:"2020-12-16"
+            }]
+        }
+    })
+
+    var inputVm = new Vue({
+        el : '#addDevice',
+        data : {
+            deviceType : "",
+            edtDeviceVendor : "",
+            edtDeviceModel : "",
+            edtDeviceSerialNum : "",
+            processStatus : "",
+            usingStatus : "",
+            edtDeviceName : "",
+            edtDeviceAlias : ""
+        },
+        methods : {
+            save : function () {
+                var deviceInfo = {
+                    deviceType : this.deviceType,
+                    edtDeviceVendor : this.edtDeviceVendor,
+                    edtDeviceModel : this.edtDeviceModel,
+                    edtDeviceSerialNum : this.edtDeviceSerialNum,
+                    processStatus : this.processStatus,
+                    usingStatus : this.usingStatus,
+                    edtDeviceName : this.edtDeviceName,
+                    edtDeviceAlias : this.edtDeviceAlias
+                };
+
+                alert("success")
+            }
+        }
+
+    })
+
+    var searchVm = new Vue({
+        el : '#searchDevice',
+        data : {
+            search : {
+                name : "",
+                startTime : "",
+                endTime : "",
+                status : "",
+                doctorName : "",
+                organization : "竹信智慧健康",
+            }
+        },
+        methods: {
+            check : function () {
+
+            }
+        }
+    })
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $('#startDate').focus(function () {
+        var t = $(this).attr('type')
+        if (t === "text"){
+            $(this).attr("type","date")
+        }
+    })
+    $('#startDate').blur(function () {
+        var t = $(this).attr('type')
+        if (t === "date"){
+            $(this).attr("type","text")
+        }
+    })
+
+    $('#endDate').focus(function () {
+        var t = $(this).attr('type')
+        if (t === "text"){
+            $(this).attr("type","date")
+        }
+    })
+    $('#endDate').blur(function () {
+        var t = $(this).attr('type')
+        if (t === "date"){
+            $(this).attr("type","text")
+        }
+    })
+
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    layui.use('form',function () {
+        var form = layui.form;
+    });
+    layui.use('button',function () {
+        var button = layui.button;
+    })
+
+</script>
+<!--<script>
+    $('#left_nav_bar').load("../leftNavBar.html")
+</script>-->
+
+<script>
+    var height = $(window).height();
+    $('#leftNavBar').css("height",height);
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css">
+    <title>健康报告</title>
+</head>
+<body>
+
+<div class="layui-container">
+
+    <div class="layui-row">
+
+
+        <!--左侧导航栏-->
+        <div id="left_nav_bar" class="layui-col-md-3">
+            <ul class="layui-nav layui-nav-tree layui-nav-side" lay-filter="test">
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">快捷菜单</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../quickMenu/首页.html">首页</a></dd>
+                        <dd><a href="../quickMenu/预警监控.html">预警监控</a></dd>
+                        <dd><a href="../quickMenu/工作提醒.html">工作提醒</a></dd>
+                        <dd><a href="javascript:;">医患交流</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">健康干预</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../health_interfere/预警处置.html">预警处置</a></dd>
+                        <dd class="layui-this"><a href="../health_interfere/healthReport.html">健康报告</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">签约建档</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../sign&record/basicRecord.html">基本档案</a></dd>
+                        <dd><a href="../sign&record/signManage.html">签约管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">内分泌科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">心内科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">体检科</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">健康数据</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">体征数据</a></dd>
+                        <dd><a href="../health_data/生化数据.html">生化数据</a></dd>
+                        <dd><a href="javascript:;">电生理数据</a></dd>
+                        <dd><a href="javascript:;">影像数据</a></dd>
+                        <dd><a href="javascript:;">其他检查</a></dd>
+                        <dd><a href="javascript:;">全部查询</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">报表管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">选项1</a></dd>
+                        <dd><a href="javascript:;">选项2</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item ">
+                    <a href="javascript:;">系统配置</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="../system_config/doctorsTeam.html">医生团队</a></dd>
+                        <dd><a href="../system_config/contractedServicePackage.html">签约服务包</a></dd>
+                        <dd><a href="javascript:;">筛查APP账号</a></dd>
+                        <dd><a href="../system_config/deviceStockManagement.html">设备库存管理</a></dd>
+                        <dd><a href="javascript:;">医嘱模板</a></dd>
+                    </dl>
+                </li>
+            </ul>
+
+        </div>
+
+        <!--网页主体-->
+        <div style="margin-top: 5px" class="layui-col-lg-9">
+
+            <!--路径导航-->
+            <span style="margin-left: 20px;" class="layui-breadcrumb">
+                <a>健康干预</a>
+                <a><cite>健康报告</cite></a>
+            </span>
+
+            <!--条件搜索，审核报告-->
+            <div style="border: 1px #9F9F9F solid; margin-left: 10px; margin-top:10px;" class="layui-container">
+                <div class="layui-row">
+                    <form class="layui-form" action="">
+                        <div id="searchDevice" style="margin-top: 5px;" class="layui-form-item">
+                            <div style="margin-top: 5px;width: 150px" class="layui-inline">
+                                <select  v-model="s_DeviceVendor" lay-verify="">
+                                    <option>待审报告</option>
+                                    <option>已审报告</option>
+                                </select>
+                            </div>
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input  v-model="s_DeviceSerialNum" type="text"  required  lay-verify="required" placeholder="姓名" autocomplete="off" class="layui-input">
+                            </div>
+
+                            <div style="margin-top: 5px;" class="layui-inline">
+                                <input id="time" v-model="test" type="text"  required  lay-verify="required" placeholder="选择日期" autocomplete="off" class="layui-input">
+                            </div>
+                            <button type="button" class="layui-btn layui-btn-warm" @click="search">搜索</button>
+                            <button type="button" class="layui-btn layui-btn-normal">全部</button>
+                            <button type="button" class="layui-btn layui-btn-normal">上月</button>
+                            <button type="button" class="layui-btn layui-btn-normal">批量审核报告</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="deviceInfoTable" class="layui-row">
+                    <table style="text-align: center" class="layui-table">
+                        <colgroup>
+                            <col width="200">
+                            <col width="200">
+                            <col width="150">
+                            <col width="150">
+                            <col width="200">
+                            <col width="150">
+                            <col width="150">
+                            <col width="200">
+                            <col width="150">
+                        </colgroup>
+                        <thead>
+                        <tr>
+                            <th style="text-align: center">操作</th>
+                            <th style="text-align: center">姓名</th>
+                            <th style="text-align: center">性别</th>
+                            <th style="text-align: center">年龄</th>
+                            <th style="text-align: center">联系电话</th>
+                            <th style="text-align: center">报告周期</th>
+                            <th style="text-align: center">建档机构</th>
+                            <th style="text-align: center">户籍地址</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="info in deviceStockInfo">
+                            <td>
+                                <div class="layui-inline">
+                                    <a href="../健康报告-个人健康月评估报告.html" type="button" class="layui-btn layui-btn-xs layui-btn-normal">审核报告</a>
+
+                                </div>
+                            </td>
+                            <td>{{info.txtDeviceVendor}}</td>
+                            <td>{{info.txtDeviceType}}</td>
+                            <td>{{info.txtDeviceSerialNum}}</td>
+                            <td>{{info.txtUsingStatus}}</td>
+                            <td>{{info.txtRunningStatus}}</td>
+                            <td>{{info.txtSubscriber}}</td>
+                            <td>{{info.txtPhoneNum}}</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.0/axios.js"></script>
+<!-- 开发环境版本，包含了有帮助的命令行警告 -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var vm = new Vue({
+        el: '#deviceInfoTable',
+        data: {
+            deviceStockInfo: [{
+                txtDeviceVendor:"华为",
+                txtDeviceType:"LIO-AL00",
+                txtDeviceSerialNum:"QWE123",
+                txtUsingStatus:"运行中",
+                txtRunningStatus:"1",
+                txtSubscriber:"yorick61c",
+                txtPhoneNum:"18569630601",
+                txtInTime:"2020-12-16"
+            }]
+        }
+    })
+
+    var inputVm = new Vue({
+        el : '#addDevice',
+        data : {
+
+            deviceType : "",
+            edtDeviceVendor : "",
+            edtDeviceModel : "",
+            edtDeviceSerialNum : "",
+            processStatus : "",
+            usingStatus : "",
+            edtDeviceName : "",
+            edtDeviceAlias : ""
+        },
+        methods : {
+            save : function () {
+                var deviceInfo = {
+                    deviceType : this.deviceType,
+                    edtDeviceVendor : this.edtDeviceVendor,
+                    edtDeviceModel : this.edtDeviceModel,
+                    edtDeviceSerialNum : this.edtDeviceSerialNum,
+                    processStatus : this.processStatus,
+                    usingStatus : this.usingStatus,
+                    edtDeviceName : this.edtDeviceName,
+                    edtDeviceAlias : this.edtDeviceAlias
+                };
+
+                alert(deviceInfo.deviceType)
+            }
+        }
+
+    })
+
+    var searchVm = new Vue({
+        el : '#searchDevice',
+        data : {
+            s_DeviceSerialNum : "test"
+        },
+        methods: {
+            search : function () {
+                var searchInfo = {
+                    s_DeviceSerialNum : this.s_DeviceSerialNum,
+                    s_DeviceVendor : this.s_DeviceVendor,
+                    s_DeviceType : this.s_DeviceType,
+                    s_UsingStatus : this.s_UsingStatus,
+                    s_RunningStatus : this.s_RunningStatus
+                }
+                alert(searchInfo.s_DeviceSerialNum)
+            }
+        }
+    })
+</script>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script>
+    $('#time').focus(function () {
+        var t = $(this).attr('type');
+        if (t ==="text")
+            $(this).attr("type","date");
+    })
+    $('#time').blur(function () {
+        var t = $(this).attr('type');
+        if (t ==="date")
+            $(this).attr("type","text");
+    })
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="https://www.layuicdn.com/layui-v2.5.6/layui.js "></script>
+<script>
+    //一般直接写在一个js文件中
+    layui.use('element', function(){
+        var element = layui.element;
+    });
+    layui.use('form',function () {
+        var form = layui.form;
+    });
+    layui.use('button',function () {
+        var button = layui.button;
+    })
+
+</script>
+<!--<script>
+    $('#left_nav_bar').load("../leftNavBar.html")
+</script>-->
+
+<script>
+    var height = $(window).height();
+    $('#leftNavBar').css("height",height);
+</script>
+</body>
+</html>
